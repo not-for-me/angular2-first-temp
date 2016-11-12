@@ -1,0 +1,7 @@
+<md-card>
+  <div class="contents">
+    <md-input #nameInput placeholder="사용자 이름" [(ngModel)]="userName"></md-input>
+    <button md-raised-button (click)="printWelcomeMsg()">입력</button>
+    <span class="welcome-msg">{{welcomeMsg}}</span>
+  </div>
+</md-card>

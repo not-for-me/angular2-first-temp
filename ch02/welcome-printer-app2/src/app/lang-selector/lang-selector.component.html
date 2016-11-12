@@ -1,0 +1,8 @@
+<md-card>
+    <md-radio-group [(ngModel)]="langCode" (change)="syncCodeToService($event.value)">
+        <md-radio-button *ngFor="let country of langMetadata" [value]="country.code">
+            {{country.name}}
+            <img src="{{'/assets/img/' + country.flagImgName}}">
+        </md-radio-button>
+    </md-radio-group>
+</md-card>
