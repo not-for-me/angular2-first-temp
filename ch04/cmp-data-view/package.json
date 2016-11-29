@@ -1,0 +1,47 @@
+{
+  "name": "cmp-data-view",
+  "version": "1.0.0",
+  "description": "TODO 챕터 번호",
+  "main": "dist/app.js",
+  "repository": {
+    "url": "https://github.com/not-for-me/la2wt6",
+    "type": "git"
+  },
+  "scripts": {
+    "dev": "webpack && concurrently \"webpack --watch\" \"lite-server\" ",
+    "lite": "lite-server"
+  },
+  "author": "woojin.joe",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~2.1.0",
+    "@angular/compiler": "~2.1.0",
+    "@angular/core": "~2.1.0",
+    "@angular/forms": "~2.1.0",
+    "@angular/http": "~2.1.0",
+    "@angular/material": "^2.0.0-alpha.9-3",
+    "@angular/platform-browser": "~2.1.0",
+    "@angular/platform-browser-dynamic": "~2.1.0",
+    "core-js": "^2.4.1",
+    "hammerjs": "^2.0.8",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.25"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/hammerjs": "^2.0.33",
+    "@types/node": "^6.0.45",
+    "angular2-template-loader": "^0.4.0",
+    "awesome-typescript-loader": "^1.1.1",
+    "concurrently": "^3.0.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.22.0",
+    "lite-server": "^2.2.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.0.2",
+    "to-string-loader": "^1.1.5",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2"
+  }
+}

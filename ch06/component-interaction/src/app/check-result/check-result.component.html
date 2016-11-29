@@ -1,0 +1,6 @@
+<div>
+  Checked Result: <span>{{checkedCnt}}</span>
+  <ul>
+    <li *ngFor="let item of checkList; let i = index" [ngClass]="{'checked': checkResult[i]}">{{item.label}}</li>
+  </ul>
+</div>

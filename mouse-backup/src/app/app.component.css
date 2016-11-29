@@ -1,0 +1,13 @@
+h3 {
+    margin: 0;
+}
+
+.row {
+    margin: 10px 20px;
+}
+
+.cols {
+    width: 560px;
+    margin: 0 10px;
+    display: inline-block;
+}

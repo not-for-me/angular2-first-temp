@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+body {
+    background-color: #e5e5e5;
+    height: 100%;
+    overflow-y: scroll;
+    margin: 0;
+    visibility: visible;
+}

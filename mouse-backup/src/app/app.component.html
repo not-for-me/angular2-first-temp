@@ -1,0 +1,27 @@
+<div class="row">
+  <h2>{{title}}</h2>
+  <log-level-selector 
+    [id]="'app-level'"
+    [logLevel]="logLevel"
+    [printLogLevel]="printLogLevel" 
+    [loggingInterval]="loggingInterval"
+    (changeLogLevel)="logLevel = $event" 
+    (changePrintLogLevel)="printLogLevel = $event"
+    (changeLoggingInterval)="loggingInterval = $event">
+  </log-level-selector>
+</div>
+<div class="row">
+  <div class="cols">
+    <h3>{{inheritBoxTitle}}</h3>
+    <mouse-track-box
+      [id]="'inherit'"
+      [logLevel]="logLevel" 
+      [printLogLevel]="printLogLevel"
+      [loggingInterval]="loggingInterval">
+    </mouse-track-box>
+  </div>
+  <div class="cols">
+    <h3>{{independentBoxTitle}}</h3>
+    <mouse-track-box [id]="'no-inherit'"></mouse-track-box>
+  </div>
+</div>

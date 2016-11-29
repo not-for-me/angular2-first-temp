@@ -1,0 +1,4 @@
+npm install --save bootstrap@4.0.0-alpha.5 @ng-bootstrap/ng-bootstrap
+
+ng g component left-menu-bar
+ng g component main-container

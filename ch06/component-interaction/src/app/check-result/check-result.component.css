@@ -1,0 +1,7 @@
+:host {
+    display: block;
+    margin: 10px;
+}
+.checked {
+    text-decoration: line-through;
+}

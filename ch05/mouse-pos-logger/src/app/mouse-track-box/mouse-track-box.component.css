@@ -1,0 +1,28 @@
+:host {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid darkslategrey;
+}
+
+/*.box {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid darkslategrey;
+}*/
+
+.inner-box {
+    border: 1px solid grey;
+    display: inline-block;
+}
+
+.track-area {
+    width: 200px;
+    height: 200px;
+    vertical-align: top;
+    background-color: lightblue;
+}
+
+/*.track-area:hover {
+    border-width: 3px;
+    border-color: orangered;
+}*/

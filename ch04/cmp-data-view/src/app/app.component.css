@@ -1,0 +1,14 @@
+.counter {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: grey;
+    font-size: 80px;
+    border: 1px solid #000
+}
+.buttons {
+    width: 100px;
+    text-align: center;
+}

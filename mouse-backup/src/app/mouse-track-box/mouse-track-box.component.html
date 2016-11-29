@@ -1,0 +1,17 @@
+<div class="box">
+   <log-level-selector 
+    [id]="id"
+    [logLevel]="logLevel"
+    [printLogLevel]="printLogLevel" 
+    [loggingInterval]="loggingInterval"
+    (changeLogLevel)="changedLogLevel($event)" 
+    (changePrintLogLevel)="changedPrintLogLevel($event)"
+    (changeLoggingInterval)="changedLoggingInterval($event)">
+  </log-level-selector> 
+  <div #trackArea class="inner-box track-area"></div>
+  <div #logArea class="inner-box log-history">
+    <ol>
+      <li *ngFor="let log of logs">{{log}}</li>
+    </ol>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.left-menu-wrapper {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.left-menu {
+    padding-top: 2%;
+    background-color: white;
+}
+

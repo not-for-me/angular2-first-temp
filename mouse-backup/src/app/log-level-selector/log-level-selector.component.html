@@ -1,0 +1,16 @@
+<div>
+  <label [for]="id + '-cur-log-level'">Log Level:</label>
+  <select [id]="id + '-cur-log-level'" 
+    [(ngModel)]="logLevel"
+    (change)=changedLogLevel($event)>
+    <option *ngFor="let level of getLogLevels(); let i=index;" [value]="i">{{level}}</option>
+  </select>
+  <label [for]="id + '-print-log-level'">Print Log Level:</label>
+  <select [id]="id + '-print-log-level'"
+    [(ngModel)]="printLogLevel"
+    (change)=changedPrintLogLevel($event)>
+    <option *ngFor="let level of getLogLevels(); let i=index;" [value]="i">{{level}}</option>
+  </select>
+  <label [for]="id + '-logging-level'">Interval(ms):</label>
+  <input type="number" [value]="loggingInterval" (change)="changedLoggingInterval($event)"/>
+</div>
