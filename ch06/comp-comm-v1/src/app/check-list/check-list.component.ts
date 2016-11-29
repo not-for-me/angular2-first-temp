@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'cc-check-list',
-  templateUrl: `
+    selector: 'cc-check-list',
+    templateUrl: `
     <h4>항목 체크</h4>
     <span *ngFor="let item of checkList; let i = index">
       <label for="chk-{{i + 1}}">{{item}}</label>
       <input type="checkbox" id="chk-{{i + 1}}" [(ngModel)]="checkedResult[i]" />
     </span>
-    <button (click)="showResult()">결과 출력</button>
+    <button (click)="clickedResultBtn()">결과 출력</button>
     <cc-check-list-result *ngIf="isPrintedResult"></cc-check-list-result>
   `,
-  styles: [`
+    styles: [`
     :host {
       display: block;
       border: 1px solid dimgray; 
@@ -25,47 +25,34 @@ import { Component } from '@angular/core';
   `]
 })
 export class CheckListComponent {
-  static RESULT_SHOWING_TIME = 5000;
-  private checkList: string[];
-  private checkedList: string[];
-  private checkedResult: boolean[];
-  private isPrintedResult: boolean;
+    static RESULT_SHOWING_TIME = 5000;
+    checkList: string[];
+    checkedResult: boolean[];
+    isPrintedResult: boolean;
 
-  constructor() {
-    this.checkList = [
-      'check list one',
-      'check list two',
-      'check list three',
-      'check list four'
-    ];
-    this.checkedList = [];
-    this.checkedResult = [];
-    this.checkList.forEach(() => this.checkedResult.push(false));
-    this.isPrintedResult = false;
-  }
+    constructor() {
+        this.checkList = [
+            'check list one',
+            'check list two',
+            'check list three',
+            'check list four'
+        ];
+        this.checkedResult = [];
+        this.checkList.forEach(() => this.checkedResult.push(false));
+        this.isPrintedResult = false;
+    }
 
-  collectResult() {
-    console.log('current result');
-    this.checkedResult.forEach((val, idx) => {
-      console.log(`${idx} value: ${val}`);
-      this.checkedList.push(this.checkList[idx]);
-    });
-  }
+    clickedResultBtn() {
+        this.displayResult();
+        setTimeout(() => this.hideResult(), CheckListComponent.RESULT_SHOWING_TIME);
+    }
 
-  showResult() {
-    this.collectResult();
+    private displayResult() {
+        this.isPrintedResult = true;
+    }
 
-    this.displayResult();
-
-    setTimeout(() => this.hideResult(), CheckListComponent.RESULT_SHOWING_TIME);
-  }
-
-  displayResult() {
-    this.isPrintedResult = true;
-  }
-
-  hideResult() {
-    this.isPrintedResult = false;
-  }
+    private hideResult() {
+        this.isPrintedResult = false;
+    }
 
 }

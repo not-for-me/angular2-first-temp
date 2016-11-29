@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'cc-check-list-result',
-  template: `
+    selector: 'cc-check-list-result',
+    template: `
     <h4>체크한 항목 수: {{checkedCnt}}</h4>
     <h4>체크한 항목:</h4>
     <ul>
       <li *ngFor="let item of checkedResult">{{item}}</li>
     </ul>
   `,
-  styles: [`
+    styles: [`
     :host {
       display: block;
       border: 1px solid dimgray; 
@@ -24,9 +24,26 @@ import { Component, OnInit } from '@angular/core';
   `]
 })
 export class CheckListResultComponent {
-  private checkedCnt: number;
-  private checkedResult: string[];
+    checkedCnt: number;
+    checkedResult: string[];
 
-  constructor() { }
+    constructor() {
+        this.checkedResult = [];
+        this.collectCheckedResult();
+
+        this.checkedCnt = this.checkedResult.length;
+    }
+
+    private collectCheckedResult() {
+        const spanElems = document.querySelectorAll('span');
+        for (let i = 0; i < spanElems.length; i++) {
+            const spanElem = spanElems.item(i);
+            const checkboxElem = spanElem.querySelector('input');
+            if (checkboxElem.checked) {
+                const labelElem = spanElem.querySelector('label');
+                this.checkedResult.push(labelElem.innerText);
+            }
+        }
+    }
 
 }
