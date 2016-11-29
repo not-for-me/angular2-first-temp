@@ -1,6 +1,0 @@
-<div>
-  <span *ngFor="let chkItem of checkList; let i = index">
-    <label for="chk-{{chkItem.code}}">{{chkItem.label}}</label>
-    <input type="checkbox" id="chk-{{chkItem.code}}" value="{{chkItem.code}}" [(ngModel)]="checkResult[i]" />
-  </span>
-</div>
