@@ -28,22 +28,11 @@ export class CheckListResultComponent {
     checkedResult: string[];
 
     constructor() {
+        this.initResult();
+    }
+
+    private initResult() {
+        this.checkedCnt = 0;
         this.checkedResult = [];
-        this.collectCheckedResult();
-
-        this.checkedCnt = this.checkedResult.length;
     }
-
-    private collectCheckedResult() {
-        const spanElems = document.querySelectorAll('span');
-        for (let i = 0; i < spanElems.length; i++) {
-            const spanElem = spanElems.item(i);
-            const checkboxElem = spanElem.querySelector('input');
-            if (checkboxElem.checked) {
-                const labelElem = spanElem.querySelector('label');
-                this.checkedResult.push(labelElem.innerText);
-            }
-        }
-    }
-
 }

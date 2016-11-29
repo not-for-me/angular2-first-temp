@@ -8,8 +8,8 @@ import {Component} from '@angular/core';
       <label for="chk-{{i + 1}}">{{item}}</label>
       <input type="checkbox" id="chk-{{i + 1}}" [(ngModel)]="checkedResult[i]" />
     </span>
-    <button (click)="clickedResultBtn()">결과 출력</button>
-    <cc-check-list-result *ngIf="isPrintedResult"></cc-check-list-result>
+    <button>결과 출력</button>
+    <cc-check-list-result></cc-check-list-result>
   `,
     styles: [`
     :host {
@@ -25,10 +25,8 @@ import {Component} from '@angular/core';
   `]
 })
 export class CheckListComponent {
-    static RESULT_SHOWING_TIME = 5000;
     checkList: string[];
-    checkedResult: boolean[];
-    isPrintedResult: boolean;
+    checkedResult: boolean[] = [];
 
     constructor() {
         this.checkList = [
@@ -37,22 +35,6 @@ export class CheckListComponent {
             'check list three',
             'check list four'
         ];
-        this.checkedResult = [];
         this.checkList.forEach(() => this.checkedResult.push(false));
-        this.isPrintedResult = false;
     }
-
-    clickedResultBtn() {
-        this.displayResult();
-        setTimeout(() => this.hideResult(), CheckListComponent.RESULT_SHOWING_TIME);
-    }
-
-    private displayResult() {
-        this.isPrintedResult = true;
-    }
-
-    private hideResult() {
-        this.isPrintedResult = false;
-    }
-
 }
