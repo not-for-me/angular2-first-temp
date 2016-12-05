@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, AfterContentInit, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'cc-check-list',
@@ -24,7 +24,7 @@ import {Component, AfterViewInit, AfterContentInit, OnInit} from '@angular/core'
     }
   `]
 })
-export class CheckListComponent implements OnInit, AfterViewInit, AfterContentInit {
+export class CheckListComponent {
     checkList: string[];
     checkedResult: boolean[] = [];
 
@@ -36,17 +36,5 @@ export class CheckListComponent implements OnInit, AfterViewInit, AfterContentIn
             'check list four'
         ];
         this.checkList.forEach(() => this.checkedResult.push(false));
-    }
-
-    ngOnInit(): void {
-        console.log("onInit");
-    }
-
-    ngAfterContentInit(): void {
-        console.log('afterContentInit');
-    }
-
-    ngAfterViewInit(): void {
-        console.log('afterViewInit');
     }
 }

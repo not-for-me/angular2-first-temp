@@ -4,12 +4,6 @@
     border: 1px solid darkslategrey;
 }
 
-/*.box {
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid darkslategrey;
-}*/
-
 .inner-box {
     border: 1px solid grey;
     display: inline-block;

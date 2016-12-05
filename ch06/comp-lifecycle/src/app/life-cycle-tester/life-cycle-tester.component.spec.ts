@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { TempCmpComponent } from './temp-cmp.component';
+import { LifeCycleTesterComponent } from './life-cycle-tester.component';
 
-describe('TempCmpComponent', () => {
-  let component: TempCmpComponent;
-  let fixture: ComponentFixture<TempCmpComponent>;
+describe('LifeCycleTesterComponent', () => {
+  let component: LifeCycleTesterComponent;
+  let fixture: ComponentFixture<LifeCycleTesterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TempCmpComponent ]
+      declarations: [ LifeCycleTesterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TempCmpComponent);
+    fixture = TestBed.createComponent(LifeCycleTesterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

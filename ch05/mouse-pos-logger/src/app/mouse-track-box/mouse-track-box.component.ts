@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Host, Optional, ViewEncapsulation, HostListener, HostBinding } from '@angular/core';
+import { Component, OnInit, OnDestroy, Host, Optional,  HostListener, HostBinding } from '@angular/core';
 import { MySpecialLoggerService } from '../my-special-logger.service';
 import { AnotherLoggerService } from '../another-logger.service';
 import { LoggerService } from '../logger-service';
@@ -11,7 +11,6 @@ import { LOG_LEVEL_TOKEN } from '../app.tokens';
     templateUrl: './mouse-track-box.component.html',
     styleUrls: ['./mouse-track-box.component.css'],
     providers: [MySpecialLoggerService, {provide:LOG_LEVEL_TOKEN, useValue: LogLevel.DEBUG} ],
-    encapsulation: ViewEncapsulation.Native
 })
 export class MouseTrackBoxComponent implements OnInit, OnDestroy {
     logLevel: LogLevel;

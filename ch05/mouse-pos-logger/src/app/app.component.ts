@@ -13,15 +13,7 @@ export class AppComponent {
   tempShow = false;
 
   constructor(private logger: MySpecialLoggerService) {
-    // this.testLoggerLevel();
-  }
-
-  toggleTemp() {
-    this.tempShow = ! this.tempShow;
-  }
-
-  printDebugLog() {
-    this.logger.debug("test depenency injector tree!");
+    this.testLoggerLevel();
   }
 
   testLoggerLevel() {
