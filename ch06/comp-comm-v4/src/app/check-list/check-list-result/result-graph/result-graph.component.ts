@@ -20,10 +20,10 @@ export class ResultGraphComponent implements OnInit {
   constructor(public checkListStatisticsService: CheckListStatisticsService) {}
 
   ngOnInit() {
-      this.checkListStatisticsService.changedCntState.subscribe(() => this.onPrintGraph());
+      this.checkListStatisticsService.changedCntState.subscribe(() => this.printGraph());
   }
 
-  onPrintGraph() {
+  printGraph() {
     this.graphToggle = false;
     this.checkedRatio = this.checkListStatisticsService.getCheckedItemRatioText();
     setTimeout(() => this.graphToggle = true, 1);
