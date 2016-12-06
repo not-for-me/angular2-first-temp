@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {ItemEvent} from "./item-event";
+import { Component } from '@angular/core';
+import { ItemEvent } from "./item-event";
+import { CheckListStatisticsService } from './check-list-statistics.service';
 
 @Component({
     selector: 'cc-check-list',
@@ -42,7 +43,7 @@ export class CheckListComponent {
     curItemEvent: ItemEvent;
     checkedResult: boolean[] = [];
 
-    constructor() {
+    constructor(public checkListStatisticsService: CheckListStatisticsService) {
         this.makeCheckList();
         this.checkList.forEach(() => this.checkedResult.push(false));
     }
@@ -51,20 +52,29 @@ export class CheckListComponent {
         switch (op) {
             case '+':
                 this.checkItemCnt++;
+                this.checkedResult.push(false);
                 break;
             case '-':
                 this.checkItemCnt--;
+                this.checkedResult.pop();
                 break;
         }
         this.makeCheckList();
     }
 
     onChecked($event, idx: number) {
-        this.curItemEvent = {idx: idx, content: this.checkList[idx], isChecked: $event.target.checked};
+        this.curItemEvent = { idx: idx, content: this.checkList[idx], isChecked: $event.target.checked };
+        
+        if (this.curItemEvent.isChecked) {
+            this.checkListStatisticsService.curCheckedItemCnt++;
+        } else {
+            this.checkListStatisticsService.curCheckedItemCnt--;
+        }
     }
 
     removeCheckedItem(idx) {
         this.checkedResult[idx] = false;
+        this.checkListStatisticsService.curCheckedItemCnt--;
     }
 
     private makeCheckList() {
@@ -72,6 +82,6 @@ export class CheckListComponent {
         for (let i = 1; i <= this.checkItemCnt; i++) {
             this.checkList.push(`check list ${i}`);
         }
-
+        this.checkListStatisticsService.totalCheckListCnt = this.checkItemCnt;
     }
 }

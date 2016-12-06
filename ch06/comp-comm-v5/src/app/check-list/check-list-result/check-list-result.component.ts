@@ -12,7 +12,9 @@ interface CheckedItem {
     <h4>체크한 항목 수: {{checkedCnt}}</h4>
     <h4>체크한 항목:</h4>
     <ul>
-      <li *ngFor="let item of _checkedData; let idx = index">{{item.content}} <button (click)="onRemove(idx)">X</button></li> 
+      <li *ngFor="let item of _checkedData; let idx = index">
+        {{item.content}} <button (click)="onRemove(idx)">X</button>
+      </li> 
     </ul>
   `,
     styles: [`
@@ -51,7 +53,7 @@ export class CheckListResultComponent {
     }
 
     onRemove(idx) {
-        this.onSelectedToRemoveItem.emit(this._checkedData[idx].idx);
         this._checkedData = this._checkedData.filter((val, _idx) => _idx !== idx);
+        this.onSelectedToRemoveItem.emit(this._checkedData[idx].idx);
     }
 }

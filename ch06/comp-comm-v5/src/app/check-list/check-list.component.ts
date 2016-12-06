@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ItemEvent } from "./item-event";
+import {Component} from '@angular/core';
+import {ItemEvent} from "./item-event";
 
 @Component({
     selector: 'cc-check-list',
@@ -51,18 +51,16 @@ export class CheckListComponent {
         switch (op) {
             case '+':
                 this.checkItemCnt++;
-                this.checkedResult.push(false);
                 break;
             case '-':
                 this.checkItemCnt--;
-                this.checkedResult.pop();
                 break;
         }
         this.makeCheckList();
     }
 
     onChecked($event, idx: number) {
-        this.curItemEvent = { idx: idx, content: this.checkList[idx], isChecked: $event.target.checked };
+        this.curItemEvent = {idx: idx, content: this.checkList[idx], isChecked: $event.target.checked};
     }
 
     removeCheckedItem(idx) {
@@ -74,5 +72,6 @@ export class CheckListComponent {
         for (let i = 1; i <= this.checkItemCnt; i++) {
             this.checkList.push(`check list ${i}`);
         }
+
     }
 }
