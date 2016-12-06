@@ -16,10 +16,11 @@ interface CheckedItem {
         {{item.content}} <button (click)="onRemove(idx)">X</button>
       </li> 
     </ul>
+    <cc-result-graph></cc-result-graph>
   `,
     styles: [`
     :host {
-      display: block;
+      display: inline-block;
       border: 1px solid dimgray; 
       width: 380px;
       margin: 10px;
@@ -53,7 +54,7 @@ export class CheckListResultComponent {
     }
 
     onRemove(idx) {
-        this._checkedData = this._checkedData.filter((val, _idx) => _idx !== idx);
         this.onSelectedToRemoveItem.emit(this._checkedData[idx].idx);
+        this._checkedData = this._checkedData.filter((val, _idx) => _idx !== idx);
     }
 }
