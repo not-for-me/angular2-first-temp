@@ -66,15 +66,15 @@ export class CheckListComponent {
         this.curItemEvent = { idx: idx, content: this.checkList[idx], isChecked: $event.target.checked };
         
         if (this.curItemEvent.isChecked) {
-            this.checkListStatisticsService.curCheckedItemCnt++;
+            this.checkListStatisticsService.increaseCurCnt();
         } else {
-            this.checkListStatisticsService.curCheckedItemCnt--;
+            this.checkListStatisticsService.decreaseCurCnt();
         }
     }
 
     removeCheckedItem(idx) {
         this.checkedResult[idx] = false;
-        this.checkListStatisticsService.curCheckedItemCnt--;
+        this.checkListStatisticsService.decreaseCurCnt();
     }
 
     private makeCheckList() {

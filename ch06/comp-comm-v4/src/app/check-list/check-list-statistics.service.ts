@@ -1,17 +1,35 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class CheckListStatisticsService {
-  totalCheckListCnt: number;
-  curCheckedItemCnt: number;
+  private totalCnt: number;
+  private curCnt: number;
+  changedCntState: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { 
-    this.totalCheckListCnt = 0;
-    this.curCheckedItemCnt = 0;
+  constructor() {
+    this.totalCnt = 0;
+    this.curCnt = 0;
+  }
+
+  increaseCurCnt() {
+    this.curCnt++;
+    this.changedCntState.emit({});
+  }
+
+  decreaseCurCnt() {
+    if (this.curCnt > 0) {
+      this.curCnt--;
+      this.changedCntState.emit({});
+    }
+  }
+
+  set totalCheckListCnt(totalCnt: number) {
+    this.totalCnt = totalCnt;
+    this.changedCntState.emit({});
   }
 
   getCheckedItemRatioText() {
-    const roundedRatio = Math.round((this.curCheckedItemCnt / this.totalCheckListCnt) * 100);
+    const roundedRatio = Math.round((this.curCnt / this.totalCnt) * 100);
     return `${roundedRatio}%`;
   }
 }

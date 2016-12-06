@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CheckListStatisticsService } from '../../check-list-statistics.service';
 
 @Component({
   selector: 'cc-result-graph',
   template:`
   <h4>체크항목 통계 리포트</h4>
-  <button type="button" (click)="onPrintGraph()">그래프 출력</button>
   <div class="chart" *ngIf="graphToggle">
     <div class="grid">
       <span [style.height]="checkedRatio" [title]="checkedRatio"></span>
@@ -14,11 +13,15 @@ import { CheckListStatisticsService } from '../../check-list-statistics.service'
   `, 
   styleUrls: ['./result-graph.component.css'],
 })
-export class ResultGraphComponent {
+export class ResultGraphComponent implements OnInit {
   checkedRatio: string = '0%';
   graphToggle = true;
 
-  constructor(public checkListStatisticsService: CheckListStatisticsService) { }
+  constructor(public checkListStatisticsService: CheckListStatisticsService) {}
+
+  ngOnInit() {
+      this.checkListStatisticsService.changedCntState.subscribe(() => this.onPrintGraph());
+  }
 
   onPrintGraph() {
     this.graphToggle = false;
