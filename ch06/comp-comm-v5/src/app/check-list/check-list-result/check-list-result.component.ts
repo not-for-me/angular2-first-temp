@@ -16,7 +16,6 @@ interface CheckedItem {
         {{item.content}} <button (click)="onRemove(idx)">X</button>
       </li> 
     </ul>
-    <cc-result-graph></cc-result-graph>
   `,
     styles: [`
     :host {

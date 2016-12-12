@@ -19,6 +19,7 @@ import { CheckListStatisticsService } from './check-list-statistics.service';
     </div>
     <cc-check-list-result [itemEvent]="curItemEvent"
         (onSelectedToRemoveItem)="removeCheckedItem($event)"></cc-check-list-result>
+    <cc-result-graph></cc-result-graph> 
   `,
     styles: [`
     :host {

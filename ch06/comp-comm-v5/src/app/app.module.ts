@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CheckListComponent } from './check-list/check-list.component';
 import { CheckListStatisticsService } from './check-list/check-list-statistics.service';
 import { CheckListResultComponent } from './check-list/check-list-result/check-list-result.component';
-import { ResultGraphComponent } from './check-list/check-list-result/result-graph/result-graph.component';
+import { ResultGraphComponent } from './check-list/result-graph/result-graph.component';
 
 @NgModule({
   declarations: [

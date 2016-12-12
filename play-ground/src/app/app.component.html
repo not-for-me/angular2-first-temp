@@ -1,0 +1,15 @@
+<h1>
+  {{title}}
+</h1>
+<div #testDiv>test element</div>
+<button type="button" (click)="clicked()">click</button>
+  <ol>
+    <li *ngFor="let num of checkListNums">
+      <app-test-child></app-test-child>
+    </li>
+  </ol>
+  <div>
+    <button type="button" (click)="checkedAll()">Check All</button>
+    <button type="button" (click)="unCheckedAll()">Uncheck All</button>
+  </div>
+<template #myTpl></template>
