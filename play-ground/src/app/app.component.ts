@@ -1,49 +1,39 @@
-import { Component, ViewChild, ViewChildren, QueryList, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { NgModel, NgForm, FormControl } from '@angular/forms';
 import { TestChildComponent } from './test-child/test-child.component';
 import { TestGrandChildComponent } from './test-child/test-grand-child/test-grand-child.component';
+import { TestAppDirective } from './test-app.directive';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  title = 'app works!';
-  myBoolean: boolean;
-  fooStrig: string = 'test';
-  checkListNums: number[]
-
-  @ViewChild('testDiv') testDiv: ElementRef;
-
-  @ViewChildren(TestChildComponent) testChild: QueryList<TestChildComponent>;
-  @ViewChildren(TestGrandChildComponent) testGrandChild: QueryList<TestGrandChildComponent>;
+export class AppComponent implements AfterViewInit {
+  myData: string = 'default';
+  // @ViewChild('myD') data: NgModel;
+  // @ViewChild('myD') dataEf: ElementRef;
+  @ViewChild('heroForm') heroForm: NgForm;
 
   constructor() {
-    this.checkListNums = [1, 2, 3];
-  }
-
-  checkedAll() {
-    this.testChild.map((comp) => {
-      comp.isChecked = true;
-    });
-  }
-
-  unCheckedAll() {
-    this.testChild.map((comp) => comp.isChecked = false);
-  }
-
-  ngOnInit() {
-    debugger;
-    // this.testChild.foo();
   }
 
   ngAfterViewInit() {
-    console.log(`view init`);
-    console.log(JSON.stringify(this.testDiv.nativeElement));
+    // console.dir(this.data);
+    // console.dir(this.dataEf);
+
   }
 
-  clicked() {
-    // this.testChild.clicked(this.fooStrig);
+  justShow() {
+    // console.dir(this.heroForm);
+    for(let controlKey in this.heroForm.controls) {
+      const control = <FormControl>this.heroForm.controls[controlKey];
+      console.log(control.value);
+    }
+  }
+
+  onSubmit() {
+    console.log(`cur Data: ${this.myData}`);
   }
 
 }

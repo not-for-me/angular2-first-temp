@@ -12,5 +12,9 @@ export class TestChildComponent {
     this.isChecked = false;
   }
   
+  foo() {
+    alert('foo...');
+  }
+  
 
 }

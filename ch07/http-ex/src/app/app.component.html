@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<label for="user-no">사용자 번호: </label><input type="number" name="user-no" #userNoInput />
+<button type="button" (click)="findUserWithJquery(userNoInput.value)">검색(jQuery)</button>
+<button type="button" (click)="findUserWithPromise(userNoInput.value)">검색(Promise)</button>
+<button type="button" (click)="findUserWithObservable(userNoInput.value)">검색(Observable)</button>
+<div>{{searchedUser | json}}</div>
+<div>
+  <button type="button" (click)="getLastUserWithJquery()">lastUser's name with jQuery</button>
+  <button type="button" (click)="getLastUserWithPromise()">lastUser's name with Promise</button>
+  <button type="button" (click)="getLastUserNameWithObservable()">lastUser's name with Observable</button>
+</div>
+<div>
+  <label for="user-name">사용자 이름:</label> <input type="text" name="user-name" [(ngModel)]="user.name"> <br/>
+  <label for="user-id">사용자 ID:</label> <input type="text" name="user-id" [(ngModel)]="user.id"> <br/>
+  <label for="user-age">사용자 나이:</label> <input type="number" for="user-age" [(ngModel)]="user.age" />
+  <button type="button" (click)="addUser()">사용자 추가</button>
+  <button type="button" (click)="resetUser()">입력 초기화</button>
+</div>

@@ -1,19 +1,17 @@
 import { ChangeDetectionStrategy, Component, Input, SimpleChanges, OnInit, OnDestroy, OnChanges, DoCheck, AfterViewInit, AfterContentInit, AfterViewChecked, AfterContentChecked } from '@angular/core';
 
 @Component({
-  selector: 'cl-life-cycle-tester',
-  templateUrl: './life-cycle-tester.component.html',
-  styleUrls: ['./life-cycle-tester.component.css'],
+  selector: 'cl-on-push-test',
+  templateUrl: './on-push-test.component.html',
+  styleUrls: ['./on-push-test.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LifeCycleTesterComponent implements OnInit, OnDestroy, OnChanges, DoCheck,
+// export class OnPushTestComponent implements OnInit {
+// export class OnPushTestComponent implements OnInit, DoCheck {
+export class OnPushTestComponent implements OnInit, OnDestroy, OnChanges, DoCheck,
   AfterViewInit, AfterContentInit, AfterViewChecked, AfterContentChecked {
-  @Input() counter: number;
-  @Input() user: any;
 
-  constructor() {
-    console.log("[constructor]");
-  }
+  constructor() { }
 
   ngOnInit() {
     console.log('[OnInit]');

@@ -1,15 +1,9 @@
-<h1>
-  {{title}}
-</h1>
-<div #testDiv>test element</div>
-<button type="button" (click)="clicked()">click</button>
-  <ol>
-    <li *ngFor="let num of checkListNums">
-      <app-test-child></app-test-child>
-    </li>
-  </ol>
-  <div>
-    <button type="button" (click)="checkedAll()">Check All</button>
-    <button type="button" (click)="unCheckedAll()">Uncheck All</button>
-  </div>
-<template #myTpl></template>
+<div>
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <input type="text" name="myD" ngModel required minlength="3" (keyup)="justShow()" />
+    <input type="number" name="age" ngModel required min="2" max="10" />
+    <!--<div [hidden]="myD.valid || myD.pristine">err</div>-->
+    <button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid">Submit</button>
+    <!--<button type="button" class="btn btn-default" (click)="heroForm.reset()">New Hero</button>-->
+  </form>
+</div>

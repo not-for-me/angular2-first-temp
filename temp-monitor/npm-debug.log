@@ -1,0 +1,1004 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/woojin/.nvm/versions/node/v6.9.1/bin/node',
+1 verbose cli   '/Users/woojin/.nvm/versions/node/v6.9.1/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'process-monitor' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData process-monitor
+8 silly fetchNamedPackageData process-monitor
+9 silly mapToRegistry name process-monitor
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'process-monitor',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'process-monitor',
+12 silly mapToRegistry   name: 'process-monitor',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/process-monitor
+14 verbose request uri https://registry.npmjs.org/process-monitor
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 10:12:58
+17 verbose request using bearer token for auth
+18 verbose request id 36ab28cc95c50b82
+19 http request GET https://registry.npmjs.org/process-monitor
+20 http 200 https://registry.npmjs.org/process-monitor
+21 verbose headers { server: 'nginx/1.10.1',
+21 verbose headers   'content-type': 'application/json',
+21 verbose headers   'last-modified': 'Wed, 26 Feb 2014 15:43:37 GMT',
+21 verbose headers   etag: 'W/"530e0ba9-2bf5"',
+21 verbose headers   'content-encoding': 'gzip',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   'transfer-encoding': 'chunked',
+21 verbose headers   'accept-ranges': 'bytes',
+21 verbose headers   date: 'Fri, 16 Dec 2016 01:12:56 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1481850775.899285,VS0,VE770',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 200,
+22 silly get   { server: 'nginx/1.10.1',
+22 silly get     'content-type': 'application/json',
+22 silly get     'last-modified': 'Wed, 26 Feb 2014 15:43:37 GMT',
+22 silly get     etag: 'W/"530e0ba9-2bf5"',
+22 silly get     'content-encoding': 'gzip',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     'transfer-encoding': 'chunked',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     date: 'Fri, 16 Dec 2016 01:12:56 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-hkg6826-HKG',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1481850775.899285,VS0,VE770',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose get saving process-monitor to /Users/woojin/.npm/registry.npmjs.org/process-monitor/.cache.json
+24 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule process-monitor@0.3.0 checking installable status
+38 silly cache add args [ 'process-monitor', null ]
+39 verbose cache add spec process-monitor
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'process-monitor',
+40 silly cache add   scope: null,
+40 silly cache add   escapedName: 'process-monitor',
+40 silly cache add   name: 'process-monitor',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed process-monitor@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for process-monitor
+43 info addNameTag [ 'process-monitor', 'latest' ]
+44 silly mapToRegistry name process-monitor
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'process-monitor',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'process-monitor',
+47 silly mapToRegistry   name: 'process-monitor',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/process-monitor
+49 verbose addNameTag registry:https://registry.npmjs.org/process-monitor not in flight; fetching
+50 verbose get https://registry.npmjs.org/process-monitor not expired, no request
+51 silly addNameTag next cb for process-monitor with tag latest
+52 silly addNamed process-monitor@0.3.0
+53 verbose addNamed "0.3.0" is a plain semver version for process-monitor
+54 silly mapToRegistry name process-monitor
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry https://registry.npmjs.org/
+57 silly mapToRegistry data Result {
+57 silly mapToRegistry   raw: 'process-monitor',
+57 silly mapToRegistry   scope: null,
+57 silly mapToRegistry   escapedName: 'process-monitor',
+57 silly mapToRegistry   name: 'process-monitor',
+57 silly mapToRegistry   rawSpec: '',
+57 silly mapToRegistry   spec: 'latest',
+57 silly mapToRegistry   type: 'tag' }
+58 silly mapToRegistry uri https://registry.npmjs.org/process-monitor
+59 verbose addRemoteTarball https://registry.npmjs.org/process-monitor/-/process-monitor-0.3.0.tgz not in flight; adding
+60 verbose addRemoteTarball [ 'https://registry.npmjs.org/process-monitor/-/process-monitor-0.3.0.tgz',
+60 verbose addRemoteTarball   'fecf252ab94603ea3dda5f0043142003daaddd4d' ]
+61 info retry fetch attempt 1 at 10:12:59
+62 info attempt registry request try #1 at 10:12:59
+63 http fetch GET https://registry.npmjs.org/process-monitor/-/process-monitor-0.3.0.tgz
+64 verbose request using bearer token for auth
+65 http fetch 200 https://registry.npmjs.org/process-monitor/-/process-monitor-0.3.0.tgz
+66 silly fetchAndShaCheck shasum fecf252ab94603ea3dda5f0043142003daaddd4d
+67 verbose addTmpTarball /var/folders/c5/_ytyd7bx7mdbw259mzt8nh6h0000gn/T/npm-32705-f8e75d2d/registry.npmjs.org/process-monitor/-/process-monitor-0.3.0.tgz not in flight; adding
+68 verbose addTmpTarball already have metadata; skipping unpack for process-monitor@0.3.0
+69 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+70 silly cache afterAdd process-monitor@0.3.0
+71 verbose afterAdd /Users/woojin/.npm/process-monitor/0.3.0/package/package.json not in flight; writing
+72 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+73 verbose afterAdd /Users/woojin/.npm/process-monitor/0.3.0/package/package.json written
+74 silly fetchNamedPackageData string
+75 silly mapToRegistry name string
+76 silly mapToRegistry using default registry
+77 silly mapToRegistry registry https://registry.npmjs.org/
+78 silly mapToRegistry data Result {
+78 silly mapToRegistry   raw: 'string',
+78 silly mapToRegistry   scope: null,
+78 silly mapToRegistry   escapedName: 'string',
+78 silly mapToRegistry   name: 'string',
+78 silly mapToRegistry   rawSpec: '',
+78 silly mapToRegistry   spec: 'latest',
+78 silly mapToRegistry   type: 'tag' }
+79 silly mapToRegistry uri https://registry.npmjs.org/string
+80 silly fetchNamedPackageData stringformat
+81 silly mapToRegistry name stringformat
+82 silly mapToRegistry using default registry
+83 silly mapToRegistry registry https://registry.npmjs.org/
+84 silly mapToRegistry data Result {
+84 silly mapToRegistry   raw: 'stringformat',
+84 silly mapToRegistry   scope: null,
+84 silly mapToRegistry   escapedName: 'stringformat',
+84 silly mapToRegistry   name: 'stringformat',
+84 silly mapToRegistry   rawSpec: '',
+84 silly mapToRegistry   spec: 'latest',
+84 silly mapToRegistry   type: 'tag' }
+85 silly mapToRegistry uri https://registry.npmjs.org/stringformat
+86 silly fetchNamedPackageData usage
+87 silly mapToRegistry name usage
+88 silly mapToRegistry using default registry
+89 silly mapToRegistry registry https://registry.npmjs.org/
+90 silly mapToRegistry data Result {
+90 silly mapToRegistry   raw: 'usage',
+90 silly mapToRegistry   scope: null,
+90 silly mapToRegistry   escapedName: 'usage',
+90 silly mapToRegistry   name: 'usage',
+90 silly mapToRegistry   rawSpec: '',
+90 silly mapToRegistry   spec: 'latest',
+90 silly mapToRegistry   type: 'tag' }
+91 silly mapToRegistry uri https://registry.npmjs.org/usage
+92 verbose request uri https://registry.npmjs.org/string
+93 verbose request no auth needed
+94 info attempt registry request try #1 at 10:13:00
+95 verbose request using bearer token for auth
+96 http request GET https://registry.npmjs.org/string
+97 verbose request uri https://registry.npmjs.org/stringformat
+98 verbose request no auth needed
+99 info attempt registry request try #1 at 10:13:00
+100 verbose request using bearer token for auth
+101 http request GET https://registry.npmjs.org/stringformat
+102 verbose request uri https://registry.npmjs.org/usage
+103 verbose request no auth needed
+104 info attempt registry request try #1 at 10:13:00
+105 verbose request using bearer token for auth
+106 http request GET https://registry.npmjs.org/usage
+107 http 200 https://registry.npmjs.org/usage
+108 verbose headers { server: 'nginx/1.10.1',
+108 verbose headers   'content-type': 'application/json',
+108 verbose headers   'last-modified': 'Fri, 28 Oct 2016 20:36:55 GMT',
+108 verbose headers   etag: 'W/"5813b6e7-9c7a"',
+108 verbose headers   'content-encoding': 'gzip',
+108 verbose headers   'cache-control': 'max-age=300',
+108 verbose headers   'transfer-encoding': 'chunked',
+108 verbose headers   'accept-ranges': 'bytes',
+108 verbose headers   date: 'Fri, 16 Dec 2016 01:12:57 GMT',
+108 verbose headers   via: '1.1 varnish',
+108 verbose headers   connection: 'keep-alive',
+108 verbose headers   'x-served-by': 'cache-hkg6820-HKG',
+108 verbose headers   'x-cache': 'MISS',
+108 verbose headers   'x-cache-hits': '0',
+108 verbose headers   'x-timer': 'S1481850777.322094,VS0,VE158',
+108 verbose headers   vary: 'Accept-Encoding' }
+109 silly get cb [ 200,
+109 silly get   { server: 'nginx/1.10.1',
+109 silly get     'content-type': 'application/json',
+109 silly get     'last-modified': 'Fri, 28 Oct 2016 20:36:55 GMT',
+109 silly get     etag: 'W/"5813b6e7-9c7a"',
+109 silly get     'content-encoding': 'gzip',
+109 silly get     'cache-control': 'max-age=300',
+109 silly get     'transfer-encoding': 'chunked',
+109 silly get     'accept-ranges': 'bytes',
+109 silly get     date: 'Fri, 16 Dec 2016 01:12:57 GMT',
+109 silly get     via: '1.1 varnish',
+109 silly get     connection: 'keep-alive',
+109 silly get     'x-served-by': 'cache-hkg6820-HKG',
+109 silly get     'x-cache': 'MISS',
+109 silly get     'x-cache-hits': '0',
+109 silly get     'x-timer': 'S1481850777.322094,VS0,VE158',
+109 silly get     vary: 'Accept-Encoding' } ]
+110 verbose get saving usage to /Users/woojin/.npm/registry.npmjs.org/usage/.cache.json
+111 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+112 silly resolveWithNewModule usage@0.3.10 checking installable status
+113 silly cache add args [ 'usage@0.3.x', null ]
+114 verbose cache add spec usage@0.3.x
+115 silly cache add parsed spec Result {
+115 silly cache add   raw: 'usage@0.3.x',
+115 silly cache add   scope: null,
+115 silly cache add   escapedName: 'usage',
+115 silly cache add   name: 'usage',
+115 silly cache add   rawSpec: '0.3.x',
+115 silly cache add   spec: '>=0.3.0 <0.4.0',
+115 silly cache add   type: 'range' }
+116 silly addNamed usage@>=0.3.0 <0.4.0
+117 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for usage
+118 silly addNameRange { name: 'usage', range: '>=0.3.0 <0.4.0', hasData: false }
+119 silly mapToRegistry name usage
+120 silly mapToRegistry using default registry
+121 silly mapToRegistry registry https://registry.npmjs.org/
+122 silly mapToRegistry data Result {
+122 silly mapToRegistry   raw: 'usage',
+122 silly mapToRegistry   scope: null,
+122 silly mapToRegistry   escapedName: 'usage',
+122 silly mapToRegistry   name: 'usage',
+122 silly mapToRegistry   rawSpec: '',
+122 silly mapToRegistry   spec: 'latest',
+122 silly mapToRegistry   type: 'tag' }
+123 silly mapToRegistry uri https://registry.npmjs.org/usage
+124 verbose addNameRange registry:https://registry.npmjs.org/usage not in flight; fetching
+125 http 200 https://registry.npmjs.org/stringformat
+126 verbose headers { server: 'nginx/1.10.1',
+126 verbose headers   'content-type': 'application/json',
+126 verbose headers   'last-modified': 'Sat, 20 Sep 2014 15:06:52 GMT',
+126 verbose headers   etag: 'W/"541d980c-2e3e"',
+126 verbose headers   'content-encoding': 'gzip',
+126 verbose headers   'cache-control': 'max-age=300',
+126 verbose headers   'transfer-encoding': 'chunked',
+126 verbose headers   'accept-ranges': 'bytes',
+126 verbose headers   date: 'Fri, 16 Dec 2016 01:12:57 GMT',
+126 verbose headers   via: '1.1 varnish',
+126 verbose headers   connection: 'keep-alive',
+126 verbose headers   'x-served-by': 'cache-hkg6822-HKG',
+126 verbose headers   'x-cache': 'MISS',
+126 verbose headers   'x-cache-hits': '0',
+126 verbose headers   'x-timer': 'S1481850777.336052,VS0,VE174',
+126 verbose headers   vary: 'Accept-Encoding' }
+127 silly get cb [ 200,
+127 silly get   { server: 'nginx/1.10.1',
+127 silly get     'content-type': 'application/json',
+127 silly get     'last-modified': 'Sat, 20 Sep 2014 15:06:52 GMT',
+127 silly get     etag: 'W/"541d980c-2e3e"',
+127 silly get     'content-encoding': 'gzip',
+127 silly get     'cache-control': 'max-age=300',
+127 silly get     'transfer-encoding': 'chunked',
+127 silly get     'accept-ranges': 'bytes',
+127 silly get     date: 'Fri, 16 Dec 2016 01:12:57 GMT',
+127 silly get     via: '1.1 varnish',
+127 silly get     connection: 'keep-alive',
+127 silly get     'x-served-by': 'cache-hkg6822-HKG',
+127 silly get     'x-cache': 'MISS',
+127 silly get     'x-cache-hits': '0',
+127 silly get     'x-timer': 'S1481850777.336052,VS0,VE174',
+127 silly get     vary: 'Accept-Encoding' } ]
+128 verbose get saving stringformat to /Users/woojin/.npm/registry.npmjs.org/stringformat/.cache.json
+129 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+130 verbose get https://registry.npmjs.org/usage not expired, no request
+131 silly addNameRange number 2 { name: 'usage', range: '>=0.3.0 <0.4.0', hasData: true }
+132 silly addNameRange versions [ 'usage',
+132 silly addNameRange   [ '0.1.1',
+132 silly addNameRange     '0.1.2',
+132 silly addNameRange     '0.1.3',
+132 silly addNameRange     '0.1.4',
+132 silly addNameRange     '0.2.1',
+132 silly addNameRange     '0.2.2',
+132 silly addNameRange     '0.2.3',
+132 silly addNameRange     '0.2.4',
+132 silly addNameRange     '0.2.5',
+132 silly addNameRange     '0.2.6',
+132 silly addNameRange     '0.3.1',
+132 silly addNameRange     '0.3.2',
+132 silly addNameRange     '0.3.3',
+132 silly addNameRange     '0.3.4',
+132 silly addNameRange     '0.3.5',
+132 silly addNameRange     '0.3.6',
+132 silly addNameRange     '0.3.7',
+132 silly addNameRange     '0.3.8',
+132 silly addNameRange     '0.3.9',
+132 silly addNameRange     '0.3.10',
+132 silly addNameRange     '0.4.0',
+132 silly addNameRange     '0.4.1',
+132 silly addNameRange     '0.4.2',
+132 silly addNameRange     '0.4.3',
+132 silly addNameRange     '0.4.4',
+132 silly addNameRange     '0.4.5-bin',
+132 silly addNameRange     '0.4.5',
+132 silly addNameRange     '0.4.6',
+132 silly addNameRange     '0.4.7',
+132 silly addNameRange     '0.4.8',
+132 silly addNameRange     '0.4.9',
+132 silly addNameRange     '0.4.10',
+132 silly addNameRange     '0.4.12',
+132 silly addNameRange     '0.4.11',
+132 silly addNameRange     '0.4.13',
+132 silly addNameRange     '0.5.0',
+132 silly addNameRange     '0.6.0',
+132 silly addNameRange     '0.7.0',
+132 silly addNameRange     '0.7.1' ] ]
+133 silly addNamed usage@0.3.10
+134 verbose addNamed "0.3.10" is a plain semver version for usage
+135 silly mapToRegistry name usage
+136 silly mapToRegistry using default registry
+137 silly mapToRegistry registry https://registry.npmjs.org/
+138 silly mapToRegistry data Result {
+138 silly mapToRegistry   raw: 'usage',
+138 silly mapToRegistry   scope: null,
+138 silly mapToRegistry   escapedName: 'usage',
+138 silly mapToRegistry   name: 'usage',
+138 silly mapToRegistry   rawSpec: '',
+138 silly mapToRegistry   spec: 'latest',
+138 silly mapToRegistry   type: 'tag' }
+139 silly mapToRegistry uri https://registry.npmjs.org/usage
+140 verbose addRemoteTarball https://registry.npmjs.org/usage/-/usage-0.3.10.tgz not in flight; adding
+141 verbose addRemoteTarball [ 'https://registry.npmjs.org/usage/-/usage-0.3.10.tgz',
+141 verbose addRemoteTarball   'c5e47f0aa312619a33b46d366bfd0542c9113f6e' ]
+142 info retry fetch attempt 1 at 10:13:00
+143 info attempt registry request try #1 at 10:13:00
+144 http fetch GET https://registry.npmjs.org/usage/-/usage-0.3.10.tgz
+145 verbose request using bearer token for auth
+146 silly resolveWithNewModule stringformat@0.0.5 checking installable status
+147 silly cache add args [ 'stringformat@0.0.5', null ]
+148 verbose cache add spec stringformat@0.0.5
+149 silly cache add parsed spec Result {
+149 silly cache add   raw: 'stringformat@0.0.5',
+149 silly cache add   scope: null,
+149 silly cache add   escapedName: 'stringformat',
+149 silly cache add   name: 'stringformat',
+149 silly cache add   rawSpec: '0.0.5',
+149 silly cache add   spec: '0.0.5',
+149 silly cache add   type: 'version' }
+150 silly addNamed stringformat@0.0.5
+151 verbose addNamed "0.0.5" is a plain semver version for stringformat
+152 silly mapToRegistry name stringformat
+153 silly mapToRegistry using default registry
+154 silly mapToRegistry registry https://registry.npmjs.org/
+155 silly mapToRegistry data Result {
+155 silly mapToRegistry   raw: 'stringformat',
+155 silly mapToRegistry   scope: null,
+155 silly mapToRegistry   escapedName: 'stringformat',
+155 silly mapToRegistry   name: 'stringformat',
+155 silly mapToRegistry   rawSpec: '',
+155 silly mapToRegistry   spec: 'latest',
+155 silly mapToRegistry   type: 'tag' }
+156 silly mapToRegistry uri https://registry.npmjs.org/stringformat
+157 verbose addNameVersion registry:https://registry.npmjs.org/stringformat not in flight; fetching
+158 verbose get https://registry.npmjs.org/stringformat not expired, no request
+159 silly mapToRegistry name stringformat
+160 silly mapToRegistry using default registry
+161 silly mapToRegistry registry https://registry.npmjs.org/
+162 silly mapToRegistry data Result {
+162 silly mapToRegistry   raw: 'stringformat',
+162 silly mapToRegistry   scope: null,
+162 silly mapToRegistry   escapedName: 'stringformat',
+162 silly mapToRegistry   name: 'stringformat',
+162 silly mapToRegistry   rawSpec: '',
+162 silly mapToRegistry   spec: 'latest',
+162 silly mapToRegistry   type: 'tag' }
+163 silly mapToRegistry uri https://registry.npmjs.org/stringformat
+164 verbose addRemoteTarball https://registry.npmjs.org/stringformat/-/stringformat-0.0.5.tgz not in flight; adding
+165 verbose addRemoteTarball [ 'https://registry.npmjs.org/stringformat/-/stringformat-0.0.5.tgz',
+165 verbose addRemoteTarball   '83c2fecbd766dd456f942e4f6af8061bffd87f12' ]
+166 info retry fetch attempt 1 at 10:13:00
+167 info attempt registry request try #1 at 10:13:00
+168 http fetch GET https://registry.npmjs.org/stringformat/-/stringformat-0.0.5.tgz
+169 verbose request using bearer token for auth
+170 http fetch 200 https://registry.npmjs.org/usage/-/usage-0.3.10.tgz
+171 silly fetchAndShaCheck shasum c5e47f0aa312619a33b46d366bfd0542c9113f6e
+172 verbose addTmpTarball /var/folders/c5/_ytyd7bx7mdbw259mzt8nh6h0000gn/T/npm-32705-f8e75d2d/registry.npmjs.org/usage/-/usage-0.3.10.tgz not in flight; adding
+173 verbose addTmpTarball already have metadata; skipping unpack for usage@0.3.10
+174 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+175 silly cache afterAdd usage@0.3.10
+176 verbose afterAdd /Users/woojin/.npm/usage/0.3.10/package/package.json not in flight; writing
+177 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+178 verbose afterAdd /Users/woojin/.npm/usage/0.3.10/package/package.json written
+179 http 200 https://registry.npmjs.org/string
+180 verbose headers { server: 'nginx/1.10.1',
+180 verbose headers   'content-type': 'application/json',
+180 verbose headers   'last-modified': 'Tue, 13 Dec 2016 02:42:31 GMT',
+180 verbose headers   etag: 'W/"584f6017-14cf3"',
+180 verbose headers   'content-encoding': 'gzip',
+180 verbose headers   'cache-control': 'max-age=300',
+180 verbose headers   'transfer-encoding': 'chunked',
+180 verbose headers   'accept-ranges': 'bytes',
+180 verbose headers   date: 'Fri, 16 Dec 2016 01:12:58 GMT',
+180 verbose headers   via: '1.1 varnish',
+180 verbose headers   connection: 'keep-alive',
+180 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+180 verbose headers   'x-cache': 'MISS',
+180 verbose headers   'x-cache-hits': '0',
+180 verbose headers   'x-timer': 'S1481850777.176311,VS0,VE1044',
+180 verbose headers   vary: 'Accept-Encoding' }
+181 silly get cb [ 200,
+181 silly get   { server: 'nginx/1.10.1',
+181 silly get     'content-type': 'application/json',
+181 silly get     'last-modified': 'Tue, 13 Dec 2016 02:42:31 GMT',
+181 silly get     etag: 'W/"584f6017-14cf3"',
+181 silly get     'content-encoding': 'gzip',
+181 silly get     'cache-control': 'max-age=300',
+181 silly get     'transfer-encoding': 'chunked',
+181 silly get     'accept-ranges': 'bytes',
+181 silly get     date: 'Fri, 16 Dec 2016 01:12:58 GMT',
+181 silly get     via: '1.1 varnish',
+181 silly get     connection: 'keep-alive',
+181 silly get     'x-served-by': 'cache-hkg6826-HKG',
+181 silly get     'x-cache': 'MISS',
+181 silly get     'x-cache-hits': '0',
+181 silly get     'x-timer': 'S1481850777.176311,VS0,VE1044',
+181 silly get     vary: 'Accept-Encoding' } ]
+182 verbose get saving string to /Users/woojin/.npm/registry.npmjs.org/string/.cache.json
+183 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+184 silly resolveWithNewModule string@0.2.2 checking installable status
+185 silly cache add args [ 'string@0.2.x', null ]
+186 verbose cache add spec string@0.2.x
+187 silly cache add parsed spec Result {
+187 silly cache add   raw: 'string@0.2.x',
+187 silly cache add   scope: null,
+187 silly cache add   escapedName: 'string',
+187 silly cache add   name: 'string',
+187 silly cache add   rawSpec: '0.2.x',
+187 silly cache add   spec: '>=0.2.0 <0.3.0',
+187 silly cache add   type: 'range' }
+188 silly addNamed string@>=0.2.0 <0.3.0
+189 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for string
+190 silly addNameRange { name: 'string', range: '>=0.2.0 <0.3.0', hasData: false }
+191 silly mapToRegistry name string
+192 silly mapToRegistry using default registry
+193 silly mapToRegistry registry https://registry.npmjs.org/
+194 silly mapToRegistry data Result {
+194 silly mapToRegistry   raw: 'string',
+194 silly mapToRegistry   scope: null,
+194 silly mapToRegistry   escapedName: 'string',
+194 silly mapToRegistry   name: 'string',
+194 silly mapToRegistry   rawSpec: '',
+194 silly mapToRegistry   spec: 'latest',
+194 silly mapToRegistry   type: 'tag' }
+195 silly mapToRegistry uri https://registry.npmjs.org/string
+196 verbose addNameRange registry:https://registry.npmjs.org/string not in flight; fetching
+197 verbose get https://registry.npmjs.org/string not expired, no request
+198 silly addNameRange number 2 { name: 'string', range: '>=0.2.0 <0.3.0', hasData: true }
+199 silly addNameRange versions [ 'string',
+199 silly addNameRange   [ '0.0.1',
+199 silly addNameRange     '0.0.2',
+199 silly addNameRange     '0.0.3',
+199 silly addNameRange     '0.0.4',
+199 silly addNameRange     '0.1.1',
+199 silly addNameRange     '0.1.2',
+199 silly addNameRange     '0.2.0',
+199 silly addNameRange     '0.2.1',
+199 silly addNameRange     '0.2.1-1',
+199 silly addNameRange     '0.2.1-2',
+199 silly addNameRange     '0.2.2',
+199 silly addNameRange     '1.0.0',
+199 silly addNameRange     '1.1.0',
+199 silly addNameRange     '1.2.0',
+199 silly addNameRange     '1.2.1',
+199 silly addNameRange     '1.3.0',
+199 silly addNameRange     '1.3.1',
+199 silly addNameRange     '1.4.0',
+199 silly addNameRange     '1.5.0',
+199 silly addNameRange     '1.5.1',
+199 silly addNameRange     '1.6.0',
+199 silly addNameRange     '1.6.1',
+199 silly addNameRange     '1.7.0',
+199 silly addNameRange     '1.8.0',
+199 silly addNameRange     '1.8.1',
+199 silly addNameRange     '1.9.0',
+199 silly addNameRange     '1.9.1',
+199 silly addNameRange     '2.0.0',
+199 silly addNameRange     '2.0.1',
+199 silly addNameRange     '2.1.0',
+199 silly addNameRange     '2.2.0',
+199 silly addNameRange     '3.0.0',
+199 silly addNameRange     '3.0.1',
+199 silly addNameRange     '3.1.0',
+199 silly addNameRange     '3.1.1',
+199 silly addNameRange     '3.1.2',
+199 silly addNameRange     '3.1.3',
+199 silly addNameRange     '3.2.0',
+199 silly addNameRange     '3.2.1',
+199 silly addNameRange     '3.3.0',
+199 silly addNameRange     '3.3.1',
+199 silly addNameRange     '3.3.2',
+199 silly addNameRange     '3.3.3' ] ]
+200 silly addNamed string@0.2.2
+201 verbose addNamed "0.2.2" is a plain semver version for string
+202 silly mapToRegistry name string
+203 silly mapToRegistry using default registry
+204 silly mapToRegistry registry https://registry.npmjs.org/
+205 silly mapToRegistry data Result {
+205 silly mapToRegistry   raw: 'string',
+205 silly mapToRegistry   scope: null,
+205 silly mapToRegistry   escapedName: 'string',
+205 silly mapToRegistry   name: 'string',
+205 silly mapToRegistry   rawSpec: '',
+205 silly mapToRegistry   spec: 'latest',
+205 silly mapToRegistry   type: 'tag' }
+206 silly mapToRegistry uri https://registry.npmjs.org/string
+207 verbose addRemoteTarball https://registry.npmjs.org/string/-/string-0.2.2.tgz not in flight; adding
+208 verbose addRemoteTarball [ 'https://registry.npmjs.org/string/-/string-0.2.2.tgz',
+208 verbose addRemoteTarball   'cd84c7d69f36d0b7759b6ad7d2411eb75aa83bfe' ]
+209 info retry fetch attempt 1 at 10:13:01
+210 info attempt registry request try #1 at 10:13:01
+211 http fetch GET https://registry.npmjs.org/string/-/string-0.2.2.tgz
+212 verbose request using bearer token for auth
+213 http fetch 200 https://registry.npmjs.org/stringformat/-/stringformat-0.0.5.tgz
+214 silly fetchAndShaCheck shasum 83c2fecbd766dd456f942e4f6af8061bffd87f12
+215 verbose addTmpTarball /var/folders/c5/_ytyd7bx7mdbw259mzt8nh6h0000gn/T/npm-32705-f8e75d2d/registry.npmjs.org/stringformat/-/stringformat-0.0.5.tgz not in flight; adding
+216 verbose addTmpTarball already have metadata; skipping unpack for stringformat@0.0.5
+217 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+218 silly cache afterAdd stringformat@0.0.5
+219 verbose afterAdd /Users/woojin/.npm/stringformat/0.0.5/package/package.json not in flight; writing
+220 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+221 verbose afterAdd /Users/woojin/.npm/stringformat/0.0.5/package/package.json written
+222 http fetch 200 https://registry.npmjs.org/string/-/string-0.2.2.tgz
+223 silly fetchAndShaCheck shasum cd84c7d69f36d0b7759b6ad7d2411eb75aa83bfe
+224 verbose addTmpTarball /var/folders/c5/_ytyd7bx7mdbw259mzt8nh6h0000gn/T/npm-32705-f8e75d2d/registry.npmjs.org/string/-/string-0.2.2.tgz not in flight; adding
+225 verbose addTmpTarball already have metadata; skipping unpack for string@0.2.2
+226 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+227 silly cache afterAdd string@0.2.2
+228 verbose afterAdd /Users/woojin/.npm/string/0.2.2/package/package.json not in flight; writing
+229 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+230 verbose afterAdd /Users/woojin/.npm/string/0.2.2/package/package.json written
+231 silly fetchNamedPackageData bindings
+232 silly mapToRegistry name bindings
+233 silly mapToRegistry using default registry
+234 silly mapToRegistry registry https://registry.npmjs.org/
+235 silly mapToRegistry data Result {
+235 silly mapToRegistry   raw: 'bindings',
+235 silly mapToRegistry   scope: null,
+235 silly mapToRegistry   escapedName: 'bindings',
+235 silly mapToRegistry   name: 'bindings',
+235 silly mapToRegistry   rawSpec: '',
+235 silly mapToRegistry   spec: 'latest',
+235 silly mapToRegistry   type: 'tag' }
+236 silly mapToRegistry uri https://registry.npmjs.org/bindings
+237 verbose request uri https://registry.npmjs.org/bindings
+238 verbose request no auth needed
+239 info attempt registry request try #1 at 10:13:01
+240 verbose request using bearer token for auth
+241 http request GET https://registry.npmjs.org/bindings
+242 http 200 https://registry.npmjs.org/bindings
+243 verbose headers { server: 'nginx/1.10.1',
+243 verbose headers   'content-type': 'application/json',
+243 verbose headers   'last-modified': 'Tue, 18 Oct 2016 15:54:59 GMT',
+243 verbose headers   etag: 'W/"580645d3-46f7"',
+243 verbose headers   'content-encoding': 'gzip',
+243 verbose headers   'cache-control': 'max-age=300',
+243 verbose headers   'transfer-encoding': 'chunked',
+243 verbose headers   'accept-ranges': 'bytes',
+243 verbose headers   date: 'Fri, 16 Dec 2016 01:12:59 GMT',
+243 verbose headers   via: '1.1 varnish',
+243 verbose headers   connection: 'keep-alive',
+243 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+243 verbose headers   'x-cache': 'MISS',
+243 verbose headers   'x-cache-hits': '0',
+243 verbose headers   'x-timer': 'S1481850778.787147,VS0,VE737',
+243 verbose headers   vary: 'Accept-Encoding' }
+244 silly get cb [ 200,
+244 silly get   { server: 'nginx/1.10.1',
+244 silly get     'content-type': 'application/json',
+244 silly get     'last-modified': 'Tue, 18 Oct 2016 15:54:59 GMT',
+244 silly get     etag: 'W/"580645d3-46f7"',
+244 silly get     'content-encoding': 'gzip',
+244 silly get     'cache-control': 'max-age=300',
+244 silly get     'transfer-encoding': 'chunked',
+244 silly get     'accept-ranges': 'bytes',
+244 silly get     date: 'Fri, 16 Dec 2016 01:12:59 GMT',
+244 silly get     via: '1.1 varnish',
+244 silly get     connection: 'keep-alive',
+244 silly get     'x-served-by': 'cache-hkg6826-HKG',
+244 silly get     'x-cache': 'MISS',
+244 silly get     'x-cache-hits': '0',
+244 silly get     'x-timer': 'S1481850778.787147,VS0,VE737',
+244 silly get     vary: 'Accept-Encoding' } ]
+245 verbose get saving bindings to /Users/woojin/.npm/registry.npmjs.org/bindings/.cache.json
+246 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+247 silly resolveWithNewModule bindings@1.2.1 checking installable status
+248 silly cache add args [ 'bindings@1.x.x', null ]
+249 verbose cache add spec bindings@1.x.x
+250 silly cache add parsed spec Result {
+250 silly cache add   raw: 'bindings@1.x.x',
+250 silly cache add   scope: null,
+250 silly cache add   escapedName: 'bindings',
+250 silly cache add   name: 'bindings',
+250 silly cache add   rawSpec: '1.x.x',
+250 silly cache add   spec: '>=1.0.0 <2.0.0',
+250 silly cache add   type: 'range' }
+251 silly addNamed bindings@>=1.0.0 <2.0.0
+252 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for bindings
+253 silly addNameRange { name: 'bindings', range: '>=1.0.0 <2.0.0', hasData: false }
+254 silly mapToRegistry name bindings
+255 silly mapToRegistry using default registry
+256 silly mapToRegistry registry https://registry.npmjs.org/
+257 silly mapToRegistry data Result {
+257 silly mapToRegistry   raw: 'bindings',
+257 silly mapToRegistry   scope: null,
+257 silly mapToRegistry   escapedName: 'bindings',
+257 silly mapToRegistry   name: 'bindings',
+257 silly mapToRegistry   rawSpec: '',
+257 silly mapToRegistry   spec: 'latest',
+257 silly mapToRegistry   type: 'tag' }
+258 silly mapToRegistry uri https://registry.npmjs.org/bindings
+259 verbose addNameRange registry:https://registry.npmjs.org/bindings not in flight; fetching
+260 verbose get https://registry.npmjs.org/bindings not expired, no request
+261 silly addNameRange number 2 { name: 'bindings', range: '>=1.0.0 <2.0.0', hasData: true }
+262 silly addNameRange versions [ 'bindings',
+262 silly addNameRange   [ '0.0.1',
+262 silly addNameRange     '0.1.0',
+262 silly addNameRange     '0.1.1',
+262 silly addNameRange     '0.2.0',
+262 silly addNameRange     '0.2.1',
+262 silly addNameRange     '0.2.2',
+262 silly addNameRange     '0.2.3',
+262 silly addNameRange     '0.2.4',
+262 silly addNameRange     '0.3.0',
+262 silly addNameRange     '0.4.0',
+262 silly addNameRange     '1.0.0',
+262 silly addNameRange     '1.1.0',
+262 silly addNameRange     '1.1.1',
+262 silly addNameRange     '1.2.0',
+262 silly addNameRange     '1.2.1' ] ]
+263 silly addNamed bindings@1.2.1
+264 verbose addNamed "1.2.1" is a plain semver version for bindings
+265 silly mapToRegistry name bindings
+266 silly mapToRegistry using default registry
+267 silly mapToRegistry registry https://registry.npmjs.org/
+268 silly mapToRegistry data Result {
+268 silly mapToRegistry   raw: 'bindings',
+268 silly mapToRegistry   scope: null,
+268 silly mapToRegistry   escapedName: 'bindings',
+268 silly mapToRegistry   name: 'bindings',
+268 silly mapToRegistry   rawSpec: '',
+268 silly mapToRegistry   spec: 'latest',
+268 silly mapToRegistry   type: 'tag' }
+269 silly mapToRegistry uri https://registry.npmjs.org/bindings
+270 verbose addRemoteTarball https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+271 verbose addRemoteTarball [ 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+271 verbose addRemoteTarball   '14ad6113812d2d37d72e67b4cacb4bb726505f11' ]
+272 info retry fetch attempt 1 at 10:13:02
+273 info attempt registry request try #1 at 10:13:02
+274 http fetch GET https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+275 verbose request using bearer token for auth
+276 http fetch 200 https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+277 silly fetchAndShaCheck shasum 14ad6113812d2d37d72e67b4cacb4bb726505f11
+278 verbose addTmpTarball /var/folders/c5/_ytyd7bx7mdbw259mzt8nh6h0000gn/T/npm-32705-f8e75d2d/registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+279 verbose addTmpTarball already have metadata; skipping unpack for bindings@1.2.1
+280 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+281 silly cache afterAdd bindings@1.2.1
+282 verbose afterAdd /Users/woojin/.npm/bindings/1.2.1/package/package.json not in flight; writing
+283 verbose correctMkdir /Users/woojin/.npm correctMkdir not in flight; initializing
+284 verbose afterAdd /Users/woojin/.npm/bindings/1.2.1/package/package.json written
+285 silly loadAllDepsIntoIdealTree Finishing
+286 silly loadIdealTree Finishing
+287 silly currentTree temp-monitor
+287 silly currentTree ├── buffer-shims@1.0.0
+287 silly currentTree ├── core-util-is@1.0.2
+287 silly currentTree ├── inherits@2.0.3
+287 silly currentTree ├── isarray@1.0.0
+287 silly currentTree ├── os-monitor@1.0.5
+287 silly currentTree ├── process-nextick-args@1.0.7
+287 silly currentTree ├── readable-stream@2.1.5
+287 silly currentTree ├── string_decoder@0.10.31
+287 silly currentTree ├── underscore@1.8.3
+287 silly currentTree └── util-deprecate@1.0.2
+288 silly idealTree temp-monitor
+288 silly idealTree ├── bindings@1.2.1
+288 silly idealTree ├── buffer-shims@1.0.0
+288 silly idealTree ├── core-util-is@1.0.2
+288 silly idealTree ├── inherits@2.0.3
+288 silly idealTree ├── isarray@1.0.0
+288 silly idealTree ├── os-monitor@1.0.5
+288 silly idealTree ├── process-monitor@0.3.0
+288 silly idealTree ├── process-nextick-args@1.0.7
+288 silly idealTree ├── readable-stream@2.1.5
+288 silly idealTree ├── string_decoder@0.10.31
+288 silly idealTree ├── string@0.2.2
+288 silly idealTree ├── stringformat@0.0.5
+288 silly idealTree ├── underscore@1.8.3
+288 silly idealTree ├── usage@0.3.10
+288 silly idealTree └── util-deprecate@1.0.2
+289 silly generateActionsToTake Starting
+290 silly install generateActionsToTake
+291 silly generateActionsToTake Finishing
+292 silly diffTrees action count 5
+293 silly diffTrees add bindings@1.2.1
+294 silly diffTrees add string@0.2.2
+295 silly diffTrees add stringformat@0.0.5
+296 silly diffTrees add usage@0.3.10
+297 silly diffTrees add process-monitor@0.3.0
+298 silly decomposeActions action count 40
+299 silly decomposeActions fetch bindings@1.2.1
+300 silly decomposeActions extract bindings@1.2.1
+301 silly decomposeActions test bindings@1.2.1
+302 silly decomposeActions preinstall bindings@1.2.1
+303 silly decomposeActions build bindings@1.2.1
+304 silly decomposeActions install bindings@1.2.1
+305 silly decomposeActions postinstall bindings@1.2.1
+306 silly decomposeActions finalize bindings@1.2.1
+307 silly decomposeActions fetch string@0.2.2
+308 silly decomposeActions extract string@0.2.2
+309 silly decomposeActions test string@0.2.2
+310 silly decomposeActions preinstall string@0.2.2
+311 silly decomposeActions build string@0.2.2
+312 silly decomposeActions install string@0.2.2
+313 silly decomposeActions postinstall string@0.2.2
+314 silly decomposeActions finalize string@0.2.2
+315 silly decomposeActions fetch stringformat@0.0.5
+316 silly decomposeActions extract stringformat@0.0.5
+317 silly decomposeActions test stringformat@0.0.5
+318 silly decomposeActions preinstall stringformat@0.0.5
+319 silly decomposeActions build stringformat@0.0.5
+320 silly decomposeActions install stringformat@0.0.5
+321 silly decomposeActions postinstall stringformat@0.0.5
+322 silly decomposeActions finalize stringformat@0.0.5
+323 silly decomposeActions fetch usage@0.3.10
+324 silly decomposeActions extract usage@0.3.10
+325 silly decomposeActions test usage@0.3.10
+326 silly decomposeActions preinstall usage@0.3.10
+327 silly decomposeActions build usage@0.3.10
+328 silly decomposeActions install usage@0.3.10
+329 silly decomposeActions postinstall usage@0.3.10
+330 silly decomposeActions finalize usage@0.3.10
+331 silly decomposeActions fetch process-monitor@0.3.0
+332 silly decomposeActions extract process-monitor@0.3.0
+333 silly decomposeActions test process-monitor@0.3.0
+334 silly decomposeActions preinstall process-monitor@0.3.0
+335 silly decomposeActions build process-monitor@0.3.0
+336 silly decomposeActions install process-monitor@0.3.0
+337 silly decomposeActions postinstall process-monitor@0.3.0
+338 silly decomposeActions finalize process-monitor@0.3.0
+339 silly runTopLevelLifecycles Starting
+340 silly executeActions Starting
+341 silly install executeActions
+342 silly doSerial global-install 0
+343 silly doParallel fetch 5
+344 verbose correctMkdir /Users/woojin/.npm/_locks correctMkdir not in flight; initializing
+345 verbose lock using /Users/woojin/.npm/_locks/staging-f1413ba51164d766.lock for /Users/woojin/angular2-first/temp-monitor/node_modules/.staging
+346 silly doParallel extract 5
+347 silly extract bindings@1.2.1
+348 silly extract string@0.2.2
+349 silly extract stringformat@0.0.5
+350 silly extract usage@0.3.10
+351 silly extract process-monitor@0.3.0
+352 verbose unbuild node_modules/.staging/string-4411256d
+353 verbose unbuild node_modules/.staging/bindings-0b8e08ce
+354 verbose unbuild node_modules/.staging/stringformat-44c55121
+355 verbose unbuild node_modules/.staging/usage-8a25960c
+356 verbose unbuild node_modules/.staging/process-monitor-64b020e8
+357 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d is being purged from base /Users/woojin/angular2-first/temp-monitor
+358 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d
+359 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121 is being purged from base /Users/woojin/angular2-first/temp-monitor
+360 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121
+361 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce is being purged from base /Users/woojin/angular2-first/temp-monitor
+362 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce
+363 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c is being purged from base /Users/woojin/angular2-first/temp-monitor
+364 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c
+365 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8 is being purged from base /Users/woojin/angular2-first/temp-monitor
+366 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8
+367 verbose tar unpack /Users/woojin/.npm/string/0.2.2/package.tgz
+368 verbose tar unpacking to /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d
+369 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d is being purged
+370 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d
+371 verbose tar unpack /Users/woojin/.npm/stringformat/0.0.5/package.tgz
+372 verbose tar unpacking to /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121
+373 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121 is being purged
+374 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121
+375 verbose tar unpack /Users/woojin/.npm/bindings/1.2.1/package.tgz
+376 verbose tar unpacking to /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce
+377 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce is being purged
+378 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce
+379 verbose tar unpack /Users/woojin/.npm/usage/0.3.10/package.tgz
+380 verbose tar unpacking to /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c
+381 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c is being purged
+382 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c
+383 verbose tar unpack /Users/woojin/.npm/process-monitor/0.3.0/package.tgz
+384 verbose tar unpacking to /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8
+385 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8 is being purged
+386 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8
+387 silly gunzTarPerm modes [ '755', '644' ]
+388 silly gunzTarPerm modes [ '755', '644' ]
+389 silly gunzTarPerm modes [ '755', '644' ]
+390 silly gunzTarPerm modes [ '755', '644' ]
+391 silly gunzTarPerm modes [ '755', '644' ]
+392 silly gunzTarPerm extractEntry package.json
+393 silly gunzTarPerm extractEntry .npmignore
+394 silly gunzTarPerm extractEntry package.json
+395 silly gunzTarPerm extractEntry package.json
+396 silly gunzTarPerm extractEntry package.json
+397 silly gunzTarPerm extractEntry .npmignore
+398 silly gunzTarPerm extractEntry README.md
+399 silly gunzTarPerm extractEntry .travis.yml
+400 silly gunzTarPerm extractEntry index.js
+401 silly gunzTarPerm extractEntry README.md
+402 silly gunzTarPerm extractEntry bindings.js
+403 silly gunzTarPerm extractEntry .npmignore
+404 silly gunzTarPerm extractEntry README.md
+405 silly gunzTarPerm extractEntry .npmignore
+406 silly gunzTarPerm extractEntry README.md
+407 silly gunzTarPerm extractEntry package.json
+408 silly gunzTarPerm extractEntry README.md
+409 silly gunzTarPerm extractEntry LICENSE
+410 silly gunzTarPerm extractEntry .travis.yml
+411 silly gunzTarPerm extractEntry Cakefile
+412 silly gunzTarPerm extractEntry CHANGELOG.md
+413 silly gunzTarPerm extractEntry CNAME
+414 silly gunzTarPerm extractEntry lib/string.js
+415 silly gunzTarPerm extractEntry lib/string.min.js
+416 silly gunzTarPerm extractEntry src/string.coffee
+417 silly gunzTarPerm extractEntry test/mocha.opts
+418 silly gunzTarPerm extractEntry test/string.test.coffee
+419 silly gunzTarPerm extractEntry test_browser/string.test.js
+420 silly gunzTarPerm extractEntry test_browser/browser.test.html
+421 silly gunzTarPerm extractEntry grunt.js
+422 silly gunzTarPerm extractEntry .travis.yml
+423 silly gunzTarPerm extractEntry test.js
+424 silly gunzTarPerm extractEntry binding.gyp
+425 silly gunzTarPerm extractEntry examples/test.js
+426 silly gunzTarPerm extractEntry docs/docco.css
+427 silly gunzTarPerm extractEntry docs/index.html
+428 silly gunzTarPerm extractEntry docs/lib/process-monitor.js.html
+429 silly gunzTarPerm extractEntry lib/process-monitor.js
+430 silly gunzTarPerm extractEntry LICENSE-MIT
+431 silly gunzTarPerm extractEntry test/process-monitor_test.js
+432 silly gunzTarPerm extractEntry lib/usage.js
+433 silly gunzTarPerm extractEntry lib/providers/index.js
+434 silly gunzTarPerm extractEntry lib/providers/mac.js
+435 silly gunzTarPerm extractEntry lib/providers/other.js
+436 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce/node_modules is being purged
+437 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce/node_modules
+438 silly gunzTarPerm extractEntry lib/providers/solaris.js
+439 silly gunzTarPerm extractEntry lib/providers/win.js
+440 silly gunzTarPerm extractEntry lib/providers/proc/index.js
+441 silly gunzTarPerm extractEntry lib/providers/proc/procStat/index.js
+442 silly gunzTarPerm extractEntry lib/providers/proc/procStat/linux.js
+443 silly gunzTarPerm extractEntry src/binding.cpp
+444 silly gunzTarPerm extractEntry src/binding.h
+445 silly gunzTarPerm extractEntry src/solaris.cpp
+446 silly gunzTarPerm extractEntry src/solaris.h
+447 silly gunzTarPerm extractEntry test/index.js
+448 silly gunzTarPerm extractEntry test/usage.js
+449 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121/node_modules is being purged
+450 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121/node_modules
+451 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8/node_modules is being purged
+452 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8/node_modules
+453 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d/node_modules is being purged
+454 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d/node_modules
+455 silly gentlyRm /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c/node_modules is being purged
+456 verbose gentlyRm don't care about contents; nuking /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c/node_modules
+457 silly doParallel preinstall 5
+458 silly preinstall bindings@1.2.1 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce
+459 info lifecycle bindings@1.2.1~preinstall: bindings@1.2.1
+460 silly preinstall string@0.2.2 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d
+461 info lifecycle string@0.2.2~preinstall: string@0.2.2
+462 silly preinstall stringformat@0.0.5 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121
+463 info lifecycle stringformat@0.0.5~preinstall: stringformat@0.0.5
+464 silly preinstall usage@0.3.10 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c
+465 info lifecycle usage@0.3.10~preinstall: usage@0.3.10
+466 silly preinstall process-monitor@0.3.0 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/process-monitor-64b020e8
+467 info lifecycle process-monitor@0.3.0~preinstall: process-monitor@0.3.0
+468 silly lifecycle bindings@1.2.1~preinstall: no script for preinstall, continuing
+469 silly lifecycle string@0.2.2~preinstall: no script for preinstall, continuing
+470 silly lifecycle stringformat@0.0.5~preinstall: no script for preinstall, continuing
+471 silly lifecycle usage@0.3.10~preinstall: no script for preinstall, continuing
+472 silly lifecycle process-monitor@0.3.0~preinstall: no script for preinstall, continuing
+473 silly doReverseSerial remove 0
+474 silly doSerial move 0
+475 silly doSerial finalize 5
+476 silly finalize /Users/woojin/angular2-first/temp-monitor/node_modules/bindings
+477 silly finalize /Users/woojin/angular2-first/temp-monitor/node_modules/string
+478 silly finalize /Users/woojin/angular2-first/temp-monitor/node_modules/stringformat
+479 silly finalize /Users/woojin/angular2-first/temp-monitor/node_modules/usage
+480 silly finalize /Users/woojin/angular2-first/temp-monitor/node_modules/process-monitor
+481 silly doSerial build 5
+482 silly build bindings@1.2.1
+483 info linkStuff bindings@1.2.1
+484 silly linkStuff bindings@1.2.1 has /Users/woojin/angular2-first/temp-monitor/node_modules as its parent node_modules
+485 verbose linkBins bindings@1.2.1
+486 verbose linkMans bindings@1.2.1
+487 silly build string@0.2.2
+488 info linkStuff string@0.2.2
+489 silly linkStuff string@0.2.2 has /Users/woojin/angular2-first/temp-monitor/node_modules as its parent node_modules
+490 verbose linkBins string@0.2.2
+491 verbose linkMans string@0.2.2
+492 silly build stringformat@0.0.5
+493 info linkStuff stringformat@0.0.5
+494 silly linkStuff stringformat@0.0.5 has /Users/woojin/angular2-first/temp-monitor/node_modules as its parent node_modules
+495 verbose linkBins stringformat@0.0.5
+496 verbose linkMans stringformat@0.0.5
+497 silly build usage@0.3.10
+498 info linkStuff usage@0.3.10
+499 silly linkStuff usage@0.3.10 has /Users/woojin/angular2-first/temp-monitor/node_modules as its parent node_modules
+500 verbose linkBins usage@0.3.10
+501 verbose linkMans usage@0.3.10
+502 silly build process-monitor@0.3.0
+503 info linkStuff process-monitor@0.3.0
+504 silly linkStuff process-monitor@0.3.0 has /Users/woojin/angular2-first/temp-monitor/node_modules as its parent node_modules
+505 verbose linkBins process-monitor@0.3.0
+506 verbose linkMans process-monitor@0.3.0
+507 silly doSerial global-link 0
+508 silly doParallel update-linked 0
+509 silly doSerial install 5
+510 silly install bindings@1.2.1 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/bindings-0b8e08ce
+511 info lifecycle bindings@1.2.1~install: bindings@1.2.1
+512 silly lifecycle bindings@1.2.1~install: no script for install, continuing
+513 silly install string@0.2.2 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/string-4411256d
+514 info lifecycle string@0.2.2~install: string@0.2.2
+515 silly lifecycle string@0.2.2~install: no script for install, continuing
+516 silly install stringformat@0.0.5 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/stringformat-44c55121
+517 info lifecycle stringformat@0.0.5~install: stringformat@0.0.5
+518 silly lifecycle stringformat@0.0.5~install: no script for install, continuing
+519 silly install usage@0.3.10 /Users/woojin/angular2-first/temp-monitor/node_modules/.staging/usage-8a25960c
+520 info lifecycle usage@0.3.10~install: usage@0.3.10
+521 verbose lifecycle usage@0.3.10~install: unsafe-perm in lifecycle true
+522 verbose lifecycle usage@0.3.10~install: PATH: /Users/woojin/.nvm/versions/node/v6.9.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/woojin/angular2-first/temp-monitor/node_modules/usage/node_modules/.bin:/Users/woojin/angular2-first/temp-monitor/node_modules/.bin:/Users/woojin/.nvm/versions/node/v6.9.1/bin:/Users/woojin/.yarn/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/woojin/.go/bin
+523 verbose lifecycle usage@0.3.10~install: CWD: /Users/woojin/angular2-first/temp-monitor/node_modules/usage
+524 silly lifecycle usage@0.3.10~install: Args: [ '-c', 'node-gyp rebuild' ]
+525 silly lifecycle usage@0.3.10~install: Returned: code: 1  signal: null
+526 info lifecycle usage@0.3.10~install: Failed to exec install script
+527 verbose unlock done using /Users/woojin/.npm/_locks/staging-f1413ba51164d766.lock for /Users/woojin/angular2-first/temp-monitor/node_modules/.staging
+528 silly rollbackFailedOptional Starting
+529 silly rollbackFailedOptional Finishing
+530 silly runTopLevelLifecycles Finishing
+531 silly install printInstalled
+532 warn enoent ENOENT: no such file or directory, open '/Users/woojin/angular2-first/temp-monitor/package.json'
+533 verbose enoent ENOENT: no such file or directory, open '/Users/woojin/angular2-first/temp-monitor/package.json'
+533 verbose enoent This is most likely not a problem with npm itself
+533 verbose enoent and is related to npm not being able to find a file.
+534 warn temp-monitor No description
+535 verbose If you need help, you may report this error at:
+535 verbose     <https://github.com/npm/npm/issues>
+536 warn temp-monitor No repository field.
+537 verbose If you need help, you may report this error at:
+537 verbose     <https://github.com/npm/npm/issues>
+538 warn temp-monitor No README data
+539 verbose If you need help, you may report this error at:
+539 verbose     <https://github.com/npm/npm/issues>
+540 warn temp-monitor No license field.
+541 verbose If you need help, you may report this error at:
+541 verbose     <https://github.com/npm/npm/issues>
+542 verbose stack Error: usage@0.3.10 install: `node-gyp rebuild`
+542 verbose stack Exit status 1
+542 verbose stack     at EventEmitter.<anonymous> (/Users/woojin/.nvm/versions/node/v6.9.1/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+542 verbose stack     at emitTwo (events.js:106:13)
+542 verbose stack     at EventEmitter.emit (events.js:191:7)
+542 verbose stack     at ChildProcess.<anonymous> (/Users/woojin/.nvm/versions/node/v6.9.1/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+542 verbose stack     at emitTwo (events.js:106:13)
+542 verbose stack     at ChildProcess.emit (events.js:191:7)
+542 verbose stack     at maybeClose (internal/child_process.js:877:16)
+542 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+543 verbose pkgid usage@0.3.10
+544 verbose cwd /Users/woojin/angular2-first/temp-monitor
+545 error Darwin 15.6.0
+546 error argv "/Users/woojin/.nvm/versions/node/v6.9.1/bin/node" "/Users/woojin/.nvm/versions/node/v6.9.1/bin/npm" "install" "process-monitor"
+547 error node v6.9.1
+548 error npm  v3.10.8
+549 error code ELIFECYCLE
+550 error usage@0.3.10 install: `node-gyp rebuild`
+550 error Exit status 1
+551 error Failed at the usage@0.3.10 install script 'node-gyp rebuild'.
+551 error Make sure you have the latest version of node.js and npm installed.
+551 error If you do, this is most likely a problem with the usage package,
+551 error not with npm itself.
+551 error Tell the author that this fails on your system:
+551 error     node-gyp rebuild
+551 error You can get information on how to open an issue for this project with:
+551 error     npm bugs usage
+551 error Or if that isn't available, you can get their info via:
+551 error     npm owner ls usage
+551 error There is likely additional logging output above.
+552 verbose exit [ 1, true ]
