@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, OpaqueToken } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { UserService } from './user.service';
-
-export let MAX_SEARCH_USER_LIMIT = new OpaqueToken('SEARCH_LIMIT_CNT');
+import { MAX_SEARCH_USER_LIMIT } from './app.tokens';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ export let MAX_SEARCH_USER_LIMIT = new OpaqueToken('SEARCH_LIMIT_CNT');
     FormsModule,
     HttpModule
   ],
-  providers: [UserService, {provide: 'test', useValue: 3}],
-  // providers: [UserService, {provide: MAX_SEARCH_USER_LIMIT, useValue: 5}],
+  providers: [UserService, { provide: MAX_SEARCH_USER_LIMIT, useValue: 5 }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

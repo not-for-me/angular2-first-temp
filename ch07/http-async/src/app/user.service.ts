@@ -2,17 +2,20 @@ import { Injectable, Inject } from '@angular/core';
 import { Http, Response, Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from './app.component';
-import { MAX_SEARCH_USER_LIMIT } from './app.module';
+import { MAX_SEARCH_USER_LIMIT } from './app.tokens';;
 import * as $ from 'jquery'
 
 const SEARCH_ERROR_MSG = '사용자 검색 실패';
-console.log('in service: ' + JSON.stringify(MAX_SEARCH_USER_LIMIT));
+
 @Injectable()
 export class UserService {
   userApiUrlPrefix = '/api/users';
 
-  // constructor(public http: Http, @Inject(MAX_SEARCH_USER_LIMIT) public maxSearchUserLimit: number) { }
-  constructor(public http: Http, @Inject('test') public maxSearchUserLimit: number) { }
+  constructor(
+    public http: Http,
+    @Inject(MAX_SEARCH_USER_LIMIT)
+    public maxSearchUserLimit: number
+  ) { }
 
   findUserWithJquery(userNo: number, callback) {
     const settings = {
@@ -24,11 +27,13 @@ export class UserService {
   }
 
   findUserWithPromise(userNo: number): Promise<any> {
-    return this.http.get(`${this.userApiUrlPrefix}/${userNo}`).map(res => res.json()).toPromise();
+    return this.http.get(`${this.userApiUrlPrefix}/${userNo}`)
+      .map(res => res.json()).toPromise();
   }
 
   findUserWithObservable(userNo: number): Observable<any> {
-    return this.http.get(`${this.userApiUrlPrefix}/${userNo}`).map(res => res.json());
+    return this.http.get(`${this.userApiUrlPrefix}/${userNo}`)
+      .map(res => res.json());
   }
 
   isSutiableForSearch(nos: number[]) {
@@ -104,10 +109,12 @@ export class UserService {
   }
 
   saveUser(user: User) {
-    return this.http.post(this.userApiUrlPrefix, user).map(res => res.json());
+    return this.http.post(this.userApiUrlPrefix, user)
+      .map(res => res.json());
   }
 
   clearAllUser() {
-    return this.http.delete(this.userApiUrlPrefix).subscribe((res) => console.log(res));
+    return this.http.delete(this.userApiUrlPrefix)
+      .subscribe((res) => console.log(res));
   }
 }

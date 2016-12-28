@@ -24,4 +24,4 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/partition';
 import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/toPromise'

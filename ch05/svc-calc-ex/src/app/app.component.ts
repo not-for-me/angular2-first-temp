@@ -1,4 +1,4 @@
-import { Component, trigger, state, stype, transition, animate } from '@angular/core';
+import { Component, trigger, state, style, transition, animate } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ import { Component, trigger, state, stype, transition, animate } from '@angular/
         transform: 'scale(1.2)'
       })),
       transition('stable => unstable', animate('100ms ease-in')),
-      transition('unstable => stable', animate('100ms ease-out))
+      transition('unstable => stable', animate('100ms ease-out'))
     ])
   ]
 })

@@ -9,12 +9,11 @@ const PORT_NUM = 3000;
  * 테스트용 사용자 배열 객체
  */
 let IN_MEMORY_USER_DB = [
-    { no: 1, id: 'jwj0831', name: 'Woojin', age: 32 },
+    { no: 1, id: 'woojin', name: 'Woojin', age: 32 },
     { no: 2, id: 'kiljulee', name: 'Kilju', age: 37 },
     { no: 3, id: 'coffeenjava', name: 'Jisu', age: 37 },
-    { no: 4, id: 'dsboo', name: 'Dongsig', age: 34 }
+    { no: 4, id: 'dsboo', name: 'Dongsik', age: 34 }
 ];
-
 
 /**
  * 전체 사용자 no 조회
