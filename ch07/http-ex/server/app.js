@@ -65,4 +65,10 @@ app.delete('/api/users', (req, res) => {
     return res.send('clear');
 });
 
+app.post('/api/users/test', (req, res) => {
+    console.log(`[${req.method}] ${req.originalUrl}`);
+    console.log(`params: ${JSON.stringify(req.body)}`);
+    return res.send('ok');
+});
+
 app.listen(PORT_NUM, () => console.log(`start to listening on port ${PORT_NUM}`))

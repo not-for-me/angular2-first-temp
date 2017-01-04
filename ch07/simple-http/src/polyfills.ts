@@ -18,11 +18,4 @@ import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/partition';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/catch';

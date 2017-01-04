@@ -4,6 +4,8 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "server": "node ./server/app.js",
+    "front": "ng serve --proxy-config proxy.config.json",
     "start": "node ./server/app.js & ng serve --proxy-config proxy.config.json",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",

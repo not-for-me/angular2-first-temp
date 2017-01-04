@@ -1,18 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
-;
-
-export class User {
-  id: string;
-  name: string;
-  age: number;
-
-  constructor() {
-    this.id = '';
-    this.name = '';
-    this.age = 0;
-  }
-}
+import { ErrorHandlerService } from './error-handler.service';
+import { UserService } from './user/user.service';
+import { User } from './user/user.model';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +13,10 @@ export class AppComponent implements OnInit {
   user: User = new User();
   searchedUser: User;
 
-  constructor(public userService: UserService) { }
+  constructor(
+    public errorHandler: ErrorHandlerService,
+    public userService: UserService
+  ) { }
 
   ngOnInit() {
   }
@@ -49,7 +41,7 @@ export class AppComponent implements OnInit {
     const userPromise = this.userService.findUserWithPromise(userNo);
     userPromise
       .then(onSuccessCallback)
-      .catch(this.userService.getApiErrorHandler());
+      .catch(this.errorHandler.getApiErrorHandler());
   }
 
   findUserWithObservable(userNo: number) {
@@ -59,7 +51,7 @@ export class AppComponent implements OnInit {
     };
 
     const userId$ = this.userService.findUserWithObservable(userNo);
-    userId$.subscribe(onSuccessCallback, this.userService.getApiErrorHandler());
+    userId$.subscribe(onSuccessCallback, this.errorHandler.getApiErrorHandler());
   }
 
   /**
@@ -75,13 +67,13 @@ export class AppComponent implements OnInit {
     console.log("Using Promise");
     this.userService.findLastUserNameWithPromise()
       .then(nameOfLastUser => this.alertLastUserName(nameOfLastUser))
-      .catch(this.userService.getApiErrorHandler());
+      .catch(this.errorHandler.getApiErrorHandler());
   }
 
   findLastUserNameWithObservable() {
     console.log("Using RxJS");
     this.userService.findLastUserNameWithObservable()
-      .subscribe(nameOfLastUser => this.alertLastUserName(nameOfLastUser), this.userService.getApiErrorHandler());
+      .subscribe(nameOfLastUser => this.alertLastUserName(nameOfLastUser), this.errorHandler.getApiErrorHandler());
   }
 
   alertLastUserName(name: string) {
@@ -97,6 +89,7 @@ export class AppComponent implements OnInit {
 
   resetUser() {
     this.user = new User();
+    this.userService.testPost();
   }
 
   clearAllUser() {
