@@ -16,6 +16,11 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('heroForm') heroForm: NgForm;
 
   constructor() {
+    this.myFunc = () => console.log('other...');
+  }
+
+  myFunc() {
+    console.log('myFunc');
   }
 
   ngAfterViewInit() {

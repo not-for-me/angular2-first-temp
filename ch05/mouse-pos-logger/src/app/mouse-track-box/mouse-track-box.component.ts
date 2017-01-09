@@ -15,7 +15,7 @@ import { LOG_LEVEL_TOKEN } from '../app.tokens';
 export class MouseTrackBoxComponent implements OnInit, OnDestroy {
     logLevel: LogLevel;
     mousePosLogLevel: LogLevel = LogLevel.INFO;
-    loggingInterval: number = 500;
+    loggingInterval: number = 1000;
     logger: LoggerService;
 
     throttleFlag: boolean = false;
@@ -39,7 +39,7 @@ export class MouseTrackBoxComponent implements OnInit, OnDestroy {
 
     captureMousePos($event: MouseEvent) {
         if (this.throttleFlag) {
-            const pos = [$event.screenX, $event.screenY];
+            const pos = [$event.clientX, $event.clientY];
             this.logger.log(this.mousePosLogLevel, `x:${pos[0]} y:${pos[1]}`);
 
             this.intervalId = this.initInterval(this.loggingInterval, this.intervalId);

@@ -26,9 +26,9 @@ export class UserService {
     $.get(settings);
   }
 
-  findUserWithPromise(userNo: number): Promise<any> {
-    return this.http.get(`${this.userApiUrlPrefix}/${userNo}`).map(res => res.json()).toPromise();
-  }
+  // findUserWithPromise(userNo: number): Promise<any> {
+  //   return this.http.get(`${this.userApiUrlPrefix}/${userNo}`).map(res => res.json()).toPromise();
+  // }
 
   findUserWithObservable(userNo: number): Observable<any> {
     return this.http.get(`${this.userApiUrlPrefix}/${userNo}`).map(res => res.json());
@@ -62,19 +62,19 @@ export class UserService {
     $.get(settings);
   }
 
-  findLastUserNameWithPromise(): Promise<string> {
-    return this.http.get(`${this.userApiUrlPrefix}/nos`)
-      .map(res => res.json()).toPromise()
-      .then((nos) => {
-        if (this.isSutiableForSearch(nos)) {
-          const lastNo = nos.pop();
-          return this.findUserWithPromise(lastNo);
-        }
+  // findLastUserNameWithPromise(): Promise<string> {
+  //   return this.http.get(`${this.userApiUrlPrefix}/nos`)
+  //     .map(res => res.json()).toPromise()
+  //     .then((nos) => {
+  //       if (this.isSutiableForSearch(nos)) {
+  //         const lastNo = nos.pop();
+  //         return this.findUserWithPromise(lastNo);
+  //       }
 
-        return Promise.reject(SEARCH_ERROR_MSG);
-      })
-      .then(user => user.name);
-  }
+  //       return Promise.reject(SEARCH_ERROR_MSG);
+  //     })
+  //     .then(user => user.name);
+  // }
 
   findLastUserNameWithObservable(): Observable<string> {
     return this.http.get(`${this.userApiUrlPrefix}/nos`)
