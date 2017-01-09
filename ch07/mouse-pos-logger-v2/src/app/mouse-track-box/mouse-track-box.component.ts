@@ -21,11 +21,8 @@ export class MouseTrackBoxComponent implements OnInit, OnDestroy {
     loggingInterval: number = 1000;
     logger: LoggerService;
 
-    // throttleFlag: boolean = false;
-    // intervalId: number;
-
-    clickSubject: Subject<MouseEvent> = new Subject<MouseEvent>();
-    click$: Observable<MouseEvent> = this.clickSubject.asObservable();
+    moveSubject: Subject<MouseEvent> = new Subject<MouseEvent>();
+    move$: Observable<MouseEvent> = this.moveSubject.asObservable();
 
     constructor(@Host() @Optional() mySpecialLogger: MySpecialLoggerService, anotherLogger: AnotherLoggerService) {
         if (mySpecialLogger) {
@@ -36,25 +33,17 @@ export class MouseTrackBoxComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.click$
+        this.move$
             .throttleTime(this.loggingInterval)
             .map(evt => [evt.clientX, evt.clientY])
             .subscribe(pos => this.logger.log(this.mousePosLogLevel, `x:${pos[0]} y:${pos[1]}`));
-        // this.intervalId = this.initInterval(this.loggingInterval);
     }
 
     ngOnDestroy() {
-        // this.stopInterval(this.intervalId);
     }
 
     captureMousePos($event: MouseEvent) {
-        this.clickSubject.next($event);
-        // if (this.throttleFlag) {
-            // const pos = [$event.clientX, $event.clientY];
-            // this.logger.log(this.mousePosLogLevel, `x:${pos[0]} y:${pos[1]}`);
-
-            // this.intervalId = this.initInterval(this.loggingInterval, this.intervalId);
-        // }
+        this.moveSubject.next($event);
     }
 
     _backColor = '#000';
@@ -71,25 +60,4 @@ export class MouseTrackBoxComponent implements OnInit, OnDestroy {
   [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'][Math.floor(Math.random()*16)])
   && (lor.length == 6) ?  lor : co(lor); })('');
     }
-
-    // private startSetInterval(interval: number): number {
-    //     const intervalId = window.setInterval(() => this.throttleFlag = true, interval);
-    //     this.logger.debug(`start interval: ${intervalId}`);
-    //     return intervalId;
-    // }
-
-    // private stopInterval(intervalId: number) {
-    //     this.logger.debug(`clear interval: ${intervalId}`);
-    //     clearInterval(intervalId);
-    // }
-
-    // private initInterval(interval: number, intervalId?: number) {
-    //     this.logger.debug(`init interval: ${interval}`);
-    //     if (intervalId !== undefined) {
-    //         this.stopInterval(intervalId);
-    //     }
-
-    //     this.throttleFlag = false;
-    //     return this.startSetInterval(interval);
-    // }
 }
