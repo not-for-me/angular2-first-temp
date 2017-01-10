@@ -101,6 +101,21 @@ app.put(`${apiPrefix}/users/:userNo`, (req, res) => {
     return res.send(updatedUser);
 });
 
+app.delete(`${apiPrefix}/users/:userNo`, (req, res) => {
+    console.log(`[${req.method}] ${req.originalUrl}`);
+    if (isNotAuthorizedRequest(req.get(API_KEY_HEADER_NAME))) {
+        return res.status(403).send();
+    }
+
+    const userNo = Number.parseInt(req.params.userNo);
+    console.log(`userNo: ${userNo}`);
+
+    const idx = IN_MEMORY_USER_DB.findIndex((user) => user.no === userNo);
+    console.log(`user memory db idx: ${idx}`);
+
+    removedUserList = IN_MEMORY_USER_DB.splice(idx);
+    return res.send(removedUserList[0]);
+})
 
 app.delete(`${apiPrefix}/users`, (req, res) => {
     console.log(`[${req.method}] ${req.originalUrl}`);

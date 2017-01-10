@@ -20,11 +20,11 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fetchAllUserSummary();
+    this.fetchAllUserSummary().subscribe(res => this.userSummaries = res);
   }
 
   fetchAllUserSummary() {
-    this.userListService.findAllUserSummary().subscribe(res => this.userSummaries = res);
+    return this.userListService.findAllUserSummary();
   }
 
 
@@ -36,21 +36,24 @@ export class UserListComponent implements OnInit {
     const dialogRef = this.dialog.open(UserDetailComponent, { width: '20%' });
     dialogRef.componentInstance.isAddMode = false;
     dialogRef.componentInstance.userNo = no;
-    dialogRef.afterClosed().subscribe(result => {
-      this.fetchAllUserSummary();
-    });
+    dialogRef.afterClosed()
+      .switchMap(() => this.fetchAllUserSummary())
+      .subscribe(res => this.userSummaries = res);
   }
 
   removeUser() {
     console.log(this.selectedUserNo);
+    this.userDetailService.removeUser(this.selectedUserNo)
+      .switchMap(() => this.fetchAllUserSummary())
+      .subscribe(res => this.userSummaries = res);
   }
 
   addUser() {
     const dialogRef = this.dialog.open(UserDetailComponent, { width: '20%' });
     dialogRef.componentInstance.isAddMode = true;
     dialogRef.componentInstance.userNo = 0;
-    dialogRef.afterClosed().subscribe(result => {
-      this.fetchAllUserSummary();
-    });
+    dialogRef.afterClosed()
+      .switchMap(() => this.fetchAllUserSummary())
+      .subscribe(res => this.userSummaries = res);
   }
 }

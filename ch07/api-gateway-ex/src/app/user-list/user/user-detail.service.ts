@@ -28,10 +28,10 @@ export class UserDetailService {
     return this.http.put(`/api/v1/users/${user.no}`, user, { headers: headerInfo }).map(res => res.json());
   }
 
-  removeUser(user: any) {
+  removeUser(userNo: any) {
     const headerInfo = new Headers();
     headerInfo.set('X-My-Api-Token', 'angular-is-awesome');
 
-    return this.http.delete(`/api/v1/users/${user.no}`, { headers: headerInfo });
+    return this.http.delete(`/api/v1/users/${userNo}`, { headers: headerInfo });
   }
 }
