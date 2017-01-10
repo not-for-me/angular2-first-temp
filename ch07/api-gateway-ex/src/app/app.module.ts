@@ -7,12 +7,12 @@ import { MaterialModule, MdToolbarModule, MdListModule, MdCardModule, MdDialogMo
 import { AppComponent } from './app.component';
 import { UserListComponent, UserListService, UserDetailComponent, UserDetailService } from './user-list';
 
-const headerInfo = new Headers();
-headerInfo.set('X-My-Api-Token', 'angular-is-awesome');
+// const headerInfo = new Headers();
+// headerInfo.set('X-My-Api-Token', 'angular-is-awesome');
 
-export class MyRequestOptions extends BaseRequestOptions {
-  headers = headerInfo;
-}
+// export class MyRequestOptions extends BaseRequestOptions {
+//   headers = headerInfo;
+// }
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ export class MyRequestOptions extends BaseRequestOptions {
     MdDialogModule,
     MdSnackBarModule
   ],
-  providers: [UserListService, UserDetailService, {provide: RequestOptions, useClass: MyRequestOptions}],
+  providers: [UserListService, UserDetailService],
+  // {provide: RequestOptions, useClass: MyRequestOptions}],
   bootstrap: [AppComponent],
   entryComponents: [UserDetailComponent]
 })

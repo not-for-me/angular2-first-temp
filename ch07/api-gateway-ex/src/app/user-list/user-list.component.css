@@ -1,10 +1,10 @@
 div.container {
     height: 100%;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .user-list {
-    width: 40%;
+    width: 80%;
 }
 
 md-list-item {
