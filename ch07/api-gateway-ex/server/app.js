@@ -16,6 +16,16 @@ const isNotAuthorizedRequest = (apiKey) => {
     return !isAuthroized;
 };
 
+const generateNewNo = () => {
+    let maxNo = 0;
+    IN_MEMORY_USER_DB.forEach(user => {
+        if (user.no > maxNo) {
+            maxNo = user.no;
+        }
+    });
+    return maxNo + 1;
+}
+
 /**
  * 테스트용 사용자 배열 객체
  */
@@ -74,7 +84,7 @@ app.post(`${apiPrefix}/users`, (req, res) => {
     }
 
 
-    const newNo = IN_MEMORY_USER_DB.length + 1;
+    const newNo = generateNewNo();
     console.log(`create a new user no: ${newNo}`);
     const newUser = req.body;
     newUser.no = newNo;
@@ -113,7 +123,7 @@ app.delete(`${apiPrefix}/users/:userNo`, (req, res) => {
     const idx = IN_MEMORY_USER_DB.findIndex((user) => user.no === userNo);
     console.log(`user memory db idx: ${idx}`);
 
-    removedUserList = IN_MEMORY_USER_DB.splice(idx);
+    removedUserList = IN_MEMORY_USER_DB.splice(idx, 1);
     return res.send(removedUserList[0]);
 })
 
