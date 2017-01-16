@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { LogLevel } from './log-level.enum';
-import {LOG_LEVEL_TOKEN } from './app.tokens';
+import { LOG_LEVEL_TOKEN } from './app.tokens';
 import * as moment from 'moment';
 import { LoggerService } from './logger-service'
 
@@ -11,7 +11,7 @@ export class MySpecialLoggerService implements LoggerService {
   logLevel: LogLevel;
   logs: string[];
 
-  constructor(@Inject(LOG_LEVEL_TOKEN) logLevel: LogLevel) {
+  constructor( @Inject(LOG_LEVEL_TOKEN) logLevel: LogLevel) {
     this.MAX_HISTORY_CNT = 100;
     this.logLevel = logLevel;
     this.logs = [];
@@ -57,17 +57,19 @@ export class MySpecialLoggerService implements LoggerService {
     return `[${LogLevel[logLevel]}] ${curTimestamp} - ${msg}`;
   }
 
+  // TODO 리팩토링
   private isProperLogLevel(logLevel: LogLevel): boolean {
-    switch (this.logLevel) {
-      case LogLevel.ERROR:
-        return logLevel === LogLevel.ERROR;
-      case LogLevel.WARN:
-        return logLevel >= LogLevel.WARN;
-      case LogLevel.INFO:
-        return logLevel >= LogLevel.INFO;
-      case LogLevel.DEBUG:
-      default:
-        return true;
-    }
+    return logLevel === this.logLevel || logLevel > this.logLevel;
+    // switch (this.logLevel) {
+    //   case LogLevel.ERROR:
+    //     return logLevel === LogLevel.ERROR;
+    //   case LogLevel.WARN:
+    //     return logLevel >= LogLevel.WARN;
+    //   case LogLevel.INFO:
+    //     return logLevel >= LogLevel.INFO;
+    //   case LogLevel.DEBUG:
+    //   default:
+    //     return true;
+    // }
   }
 }

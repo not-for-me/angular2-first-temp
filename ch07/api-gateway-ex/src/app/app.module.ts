@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { UserListComponent, UserListService, UserDetailComponent, UserDetailService } from './user-list';
 
 // const headerInfo = new Headers();
-// headerInfo.set('X-My-Api-Token', 'angular-is-awesome');
+// headerInfo.set('Authorization', 'angular-is-awesome');
 
 // export class MyRequestOptions extends BaseRequestOptions {
 //   headers = headerInfo;

@@ -47,6 +47,7 @@ export class CheckListComponent {
         this.checkList.forEach(() => this.checkedResult.push(false));
     }
 
+    // TODO 리팩토링: 서비스에서 주입
     onChangeCnt(op: string) {
         switch (op) {
             case '+':

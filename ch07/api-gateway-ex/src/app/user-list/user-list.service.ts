@@ -10,7 +10,7 @@ export class UserListService {
 
   findAllUserSummary() {
     const headerInfo = new Headers();
-    headerInfo.set('X-My-Api-Token', 'angular-is-awesome');
+    headerInfo.set('Authorization', 'angular-is-awesome');
 
     return this.http.get('/api/v1/users', { headers: headerInfo }).map(res => res.json());
   }

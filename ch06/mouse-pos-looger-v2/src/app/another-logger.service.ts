@@ -5,7 +5,7 @@ import {LOG_LEVEL_TOKEN } from './app.tokens'
 import { LoggerService } from './logger-service';
 
 @Injectable()
-export class AnotherLoggerService implements LoggerService { 
+export class AnotherLoggerService implements LoggerService {
   logLevel: LogLevel;
 
   constructor(@Inject(LOG_LEVEL_TOKEN) logLevel: LogLevel) {
@@ -43,17 +43,19 @@ export class AnotherLoggerService implements LoggerService {
     return `[${LogLevel[logLevel]}] - ${msg}`;
   }
 
+  // TODO 리팩토링
   private isProperLogLevel(logLevel: LogLevel): boolean {
-    switch (this.logLevel) {
-      case LogLevel.ERROR:
-        return logLevel === LogLevel.ERROR;
-      case LogLevel.WARN:
-        return logLevel >= LogLevel.WARN;
-      case LogLevel.INFO:
-        return logLevel >= LogLevel.INFO;
-      case LogLevel.DEBUG:
-      default:
-        return true;
-    }
+    return logLevel === this.logLevel || logLevel > this.logLevel;
+    // switch (this.logLevel) {
+    //   case LogLevel.ERROR:
+    //     return logLevel === LogLevel.ERROR;
+    //   case LogLevel.WARN:
+    //     return logLevel >= LogLevel.WARN;
+    //   case LogLevel.INFO:
+    //     return logLevel >= LogLevel.INFO;
+    //   case LogLevel.DEBUG:
+    //   default:
+    //     return true;
+    // }
   }
 }
