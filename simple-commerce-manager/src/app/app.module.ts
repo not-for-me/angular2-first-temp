@@ -5,20 +5,21 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
+    NavbarComponent,
     SidebarComponent,
     FooterComponent,
     MainDashboardComponent,
-    PageNotFoundComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
