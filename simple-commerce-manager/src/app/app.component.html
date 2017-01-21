@@ -1,23 +1,10 @@
 <scm-navbar></scm-navbar>
 <div class="container-fluid">
   <div class="row">
-    <scm-sidebar (changedPage)="curPage = $event"></scm-sidebar>
+    <scm-sidebar></scm-sidebar>
 
-    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3" [ngSwitch]="curPage">
-      <div *ngSwitchCase="'prod'">
-        <scm-product-management></scm-product-management>
-      </div>
-      <div *ngSwitchCase="'cat'">
-        <scm-category-management></scm-category-management>
-      </div>
-      <div *ngSwitchCase="'promo'">
-        <scm-promotion-management></scm-promotion-management>
-      </div>
-      <div *ngSwitchCase="'coupon'">
-        <scm-coupon-management></scm-coupon-management>
-      </div>
-      <div *ngSwitchDefault>기본 뷰</div>
-      <!--<router-outlet></router-outlet>-->
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+      <router-outlet></router-outlet>
     </main>
 
   </div>
