@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'scm-sidebar',
@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  curPage: string = 'default';
+  @Output() changedPage: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  clickedNavItem($event: MouseEvent, item) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.curPage = item;
+    this.changedPage.emit(item);
+  }
 }
