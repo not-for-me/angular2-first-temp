@@ -4,10 +4,18 @@
     <scm-sidebar (changedPage)="curPage = $event"></scm-sidebar>
 
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3" [ngSwitch]="curPage">
-      <div *ngSwitchCase="'prod'">상품관리 뷰</div>
-      <div *ngSwitchCase="'cat'">카테고리 뷰</div>
-      <div *ngSwitchCase="'promo'">프로모션 뷰</div>
-      <div *ngSwitchCase="'coupon'">쿠폰 뷰</div>
+      <div *ngSwitchCase="'prod'">
+        <scm-product-management></scm-product-management>
+      </div>
+      <div *ngSwitchCase="'cat'">
+        <scm-category-management></scm-category-management>
+      </div>
+      <div *ngSwitchCase="'promo'">
+        <scm-promotion-management></scm-promotion-management>
+      </div>
+      <div *ngSwitchCase="'coupon'">
+        <scm-coupon-management></scm-coupon-management>
+      </div>
       <div *ngSwitchDefault>기본 뷰</div>
       <!--<router-outlet></router-outlet>-->
     </main>

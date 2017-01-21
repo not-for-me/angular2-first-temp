@@ -10,6 +10,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductModule } from "./product/product.module";
+import { CategoryModule } from "./category/category.module";
+import { PromotionModule } from "./promotion/promotion.module";
+import { CouponModule } from "./coupon/coupon.module";
 
 
 @NgModule({
@@ -25,6 +29,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     FormsModule,
     HttpModule,
+    ProductModule,
+    CategoryModule,
+    PromotionModule,
+    CouponModule
     // AppRoutingModule
   ],
   providers: [],
