@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-	selector: 'scm-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+  selector: 'scm-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	curPage: string = 'default';
+  curPage: string = 'default';
 }
