@@ -17,3 +17,12 @@ import 'core-js/es6/reflect';
 
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
+
+// rxjs operators
+import 'rxjs/add/observable/generate';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/first';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/reduce';

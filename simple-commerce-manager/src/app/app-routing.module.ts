@@ -4,14 +4,11 @@ import { PageNotFoundComponent } from "./app-main/page-not-found/page-not-found.
 import { MainDashboardComponent } from "./app-main/main-dashboard/main-dashboard.component";
 import { ProductManagementComponent } from "./product/product-management/product-management.component";
 import { CategoryManagementComponent } from "./category/category-management/category-management.component";
-import { PromotionManagementComponent } from "./promotion/promotion-management/promotion-management.component";
 import { CouponManagementComponent } from "./coupon/coupon-management/coupon-management.component";
 
 const routes: Routes = [
   {path: 'total-summary', component: MainDashboardComponent},
-  {path: 'product-list', component: ProductManagementComponent},
   {path: 'category-list', component: CategoryManagementComponent},
-  {path: 'promotion-list', component: PromotionManagementComponent},
   {path: 'coupon-list', component: CouponManagementComponent},
   {path: '', redirectTo: '/total-summary', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}

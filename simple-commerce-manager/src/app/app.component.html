@@ -1,12 +1,9 @@
 <scm-navbar></scm-navbar>
-<div class="container-fluid">
-  <div class="row">
-    <scm-sidebar></scm-sidebar>
+<div class="main-section">
+  <scm-sidebar></scm-sidebar>
 
-    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-      <router-outlet></router-outlet>
-    </main>
-
-  </div>
+  <main class="col-10 offset-2 mt-5 mb-5 p-5">
+    <router-outlet></router-outlet>
+  </main>
 </div>
 <scm-footer></scm-footer>

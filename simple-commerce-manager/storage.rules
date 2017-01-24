@@ -1,0 +1,14 @@
+service firebase.storage {
+ match /b/angular-first-scm.appspot.com/o {
+   match /images {
+     match /{allImages=**} {
+       allow read;
+     }
+
+     match /{imageId} {
+       allow write: if request.resource.size < 5 * 1024 * 1024
+                    && imageId.size() < 32
+     }
+   }
+ }
+}
