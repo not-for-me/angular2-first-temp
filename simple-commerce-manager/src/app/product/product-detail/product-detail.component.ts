@@ -20,15 +20,12 @@ export class ProductDetailComponent implements OnInit {
   title;
   product: Product;
   isCreateMode: boolean;
-  // @ViewChild('imgFile')
-  // imgInput: ElementRef;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private productService: ProductService,
               private catService: CategoryService,
               private toastr: ToastsManager,
-              // @Inject(FirebaseApp) private firebase: any
   ) {
   }
 
@@ -45,31 +42,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   editProduct() {
-    // const imgInputElem = <HTMLInputElement> this.imgInput.nativeElement;
-    // const fileNamePrefix = imgInputElem.value;
-    // const files = imgInputElem.files;
-
-    // const fileToLoad = files[0];
-    // let promise = new Promise((res, rej) => {
-    //   let fileName = fileToLoad.name;
-    //   let uploadTask = this.firebase.storage().ref(`/images/${fileName}`).put(fileToLoad);
-    //
-    //   uploadTask.on('state_changed', function (snapshot) {
-    //   }, function (error) {
-    //     rej(error);
-    //   }, function () {
-    //     const downloadURL = uploadTask.snapshot.downloadURL;
-    //     res(downloadURL);
-    //   });
-    // });
-
-    // Observable.fromPromise(promise)
-    //   .switchMap( (url: string) => {
-    //     console.log('result: ' + url);
-    //     this.product.imgUrl = url;
-    //     return this.productService.modifyProduct(this.product)
-    //   })
-
     this.productService.modifyProduct(this.product)
       .then(() => {
         this.toastr.success('상품 수정 완료', '[상품관리]');
