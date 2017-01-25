@@ -1,35 +1,30 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from "angularfire2";
-import { FirebaseIdGeneratorService } from "../shared/firebase-id-generator.service";
-import { Categories } from "./category.model";
-import { Observable } from "rxjs/Observable";
+import { IdGenService } from "../shared/id-gen.service";
+import { Categories, Category } from "./category.model";
+import { ItemPagingService } from "../shared/item-paging.service";
 
 @Injectable()
 export class CategoryService {
-  private _category$: FirebaseListObservable<Categories>;
+  categories$: FirebaseListObservable<Categories>;
 
   constructor(private af: AngularFire,
-              private idService: FirebaseIdGeneratorService) {
-    this._category$ = af.database.list('/categories');
+              private counterService: IdGenService) {
+    this.categories$ = af.database.list('/categories');
   }
 
-  getCategories(pageSize, pageNo) {
-    const offset = pageSize * (pageNo - 1) + 1;
-
-    return this.af.database.list('/categories', {
-      query: {
-        orderByChild: 'id',
-        startAt: offset,
-        limitToFirst: pageSize
-      }
-    });
+  create(name: string, desc: string) {
+    return this.counterService.update('category-list-item')
+      .map((id) => this.categories$.push(new Category(id, name, desc)).key)
+      .switchMap($key => this.af.database.object(`/categories/${$key}`).take(1));
   }
 
-  create(name: string) {
-    return this.idService.getNewId('category')
-      .switchMap(id => {
-        const _key = this._category$.push({id: id, name: name, isUse: true}).key;
-        return this.af.database.object('/category/' + _key).take(1);
-      });
+  update(cat: Category) {
+    const modifiedCat = Category.getNewForUpdate(cat);
+    return this.categories$.update(cat.$key, modifiedCat);
+  }
+
+  count() {
+    return this.counterService.get('category-list-item');
   }
 }

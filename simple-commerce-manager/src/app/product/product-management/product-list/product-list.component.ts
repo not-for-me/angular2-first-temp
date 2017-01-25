@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Product, ProdStatus, Products } from "../../product.model";
 import { ProductService } from "../../product.service";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/observable/empty';
+import { ActivatedRoute, Router } from "@angular/router";
+import { PROD_LIST_PAGE_SIZE } from "../../product.tokens";
 
 @Component({
   selector: 'scm-product-list',
@@ -11,27 +13,38 @@ import 'rxjs/add/observable/empty';
 })
 export class ProductListComponent implements OnInit {
   totalItemCnt: number;
-  pageSize: number = 4;
-  curPage: number = 1;
-  // products: Products = [];
-  products: Observable<Products> = Observable.empty();
+  pageSize: number;
+  pageNo: number = 1;
+  products: Products = [];
 
-  constructor(private productService: ProductService) {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private productService: ProductService,
+              @Inject(PROD_LIST_PAGE_SIZE) pageSize) {
+    this.pageSize = pageSize;
   }
 
   ngOnInit() {
-    this.pageChanged(this.curPage);
-    this.productService.getCount().subscribe(cnt => {
-      console.log(`counts: ${cnt}`);
-      this.totalItemCnt = cnt;
+    this.route.data.subscribe((data: {listData: {cnt: number, list: Products}}) => {
+      this.totalItemCnt = data.listData.cnt;
+      this.products = data.listData.list;
     });
   }
 
-  pageChanged(pageNo) {
-    this.products = this.productService.getProducts(this.pageSize, pageNo);
-      // .subscribe(prods => {
-    //   this.products = prods;
-    // });
+  pageNoChanged(pageNo) {
+    this.pageNo = pageNo;
+    this.getPagedList();
+  }
+
+  pageSizeChanged(pageSize) {
+    this.pageSize = +pageSize;
+    this.getPagedList();
+  }
+
+  private getPagedList() {
+    this.productService.getListByDesc(this.pageNo, this.pageSize, this.totalItemCnt)
+      .map((list: Products) => list.sort((p1, p2) => p2.id - p1.id))
+      .subscribe(list => this.products = list);
   }
 
   checkAllItem() {

@@ -16,7 +16,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { firebaseConfig } from "../firebase.config";
-import { FirebaseIdGeneratorService } from "./shared/firebase-id-generator.service";
+import { IdGenService } from "./shared/id-gen.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +38,7 @@ import { FirebaseIdGeneratorService } from "./shared/firebase-id-generator.servi
     CouponModule,
     AppRoutingModule
   ],
-  providers: [FirebaseIdGeneratorService],
+  providers: [IdGenService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

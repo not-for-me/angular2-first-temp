@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/router";
 import { Observable } from "rxjs/Observable";
-import 'rxjs/add/observable/of';
-import { Product } from "../product.model";
-import { ProductService } from "../product.service";
+import { Product } from "../../product.model";
+import { ProductService } from "../../product.service";
 
 @Injectable()
 export class ProductDetailResolverService implements Resolve<Product> {
@@ -17,10 +16,10 @@ export class ProductDetailResolverService implements Resolve<Product> {
       return this.productService.create({})
     }
 
-    const prodId = +route.queryParams['id'];
+    const key = route.queryParams['key'];
 
     return this.productService
-      .getProduct(prodId)
+      .get(key)
       .map(product => {
         if (product) {
           return product;

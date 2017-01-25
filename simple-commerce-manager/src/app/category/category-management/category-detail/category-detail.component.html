@@ -1,0 +1,17 @@
+<h4>카테고리 {{subTitle}}</h4>
+<div class="row">
+  <div class="input-group pl-5 my-3">
+    <span class="input-group-addon" id="product-name">카테고리 명</span>
+    <input type="text" class="form-control col-4" [(ngModel)]="cat.name"/>
+  </div>
+  <div class="input-group pl-5 my-3">
+    <textarea class="form-control col-6" rows="4" placeholder="상품 상세 설명" [(ngModel)]="cat.desc"></textarea>
+  </div>
+  <div class="input-group pl-5 my-3" *ngIf="editable">
+    <label class="btn btn-sm btn-outline-info mr-1"><input type="radio" [(ngModel)]="cat.isUse" [value]="true"> 사용</label>
+    <label class="btn btn-sm btn-outline-info"><input type="radio" [(ngModel)]="cat.isUse" [value]="false"> 미사용</label>
+  </div>
+  <div class="input-group pl-5 my-3">
+    <button type="button" class="btn btn-warning btn-sm" (click)="submit()">카테고리 {{subTitle}}</button>
+  </div>
+</div>

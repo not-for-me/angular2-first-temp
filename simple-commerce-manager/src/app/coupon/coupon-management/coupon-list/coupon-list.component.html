@@ -1,0 +1,26 @@
+<h4>쿠폰 목록</h4>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th class="text-center">쿠폰 ID</th>
+    <th class="text-center">쿠폰명</th>
+    <th class="text-center">쿠폰 유형</th>
+    <th class="text-center">쿠폰 유효기간</th>
+    <th class="text-center">사용여부</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let coupon of coupons">
+    <td class="text-center">{{coupon.id}}</td>
+    <td class="text-center">{{coupon.name}}</td>
+    <td class="text-center">{{coupon.type}}</td>
+    <td class="text-center">{{coupon.startDate + '~' + coupon.endDate}}</td>
+    <td class="text-center">{{coupon.isUse}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt"
+                  [(page)]="pageNo" (pageChange)="pageNoChanged($event)"></ngb-pagination>
+</div>

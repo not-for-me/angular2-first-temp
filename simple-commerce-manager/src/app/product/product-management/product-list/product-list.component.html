@@ -1,25 +1,34 @@
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th class="text-center"><input type="checkbox" (click)="checkAllItem()"></th>
-    <th class="text-center">상품 ID</th>
-    <th class="text-center">상품명</th>
-    <th class="text-center">상품가격</th>
-    <th class="text-center">상품 상태</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let prod of products | async">
-    <td class="text-center"><input type="checkbox" (click)="checkItem(prod.id)"></td>
-    <td>{{prod.id}}</td>
-    <td><a routerLink="product" [queryParams]="{id: prod.id}">{{prod.name}}</a></td>
-    <td>{{prod.listPrice}}</td>
-    <td>{{prod.status}}</td>
-  </tr>
-  </tbody>
-</table>
+<p>전체 상품: {{totalItemCnt}}</p>
 
 <div class="text-center">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th class="text-center"><input type="checkbox" (click)="checkAllItem()"></th>
+      <th class="text-center">#</th>
+      <th class="text-center">상품명</th>
+      <th class="text-center">상품가격</th>
+      <th class="text-center">상품 상태</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prod of products; let i = index">
+      <td class="text-center"><input type="checkbox" (click)="checkItem(prod.$key)"></td>
+      <td>{{prod.id}}</td>
+      <td><a routerLink="product" [queryParams]="{key: prod.$key}">{{prod.name}}</a></td>
+      <td>{{prod.listPrice}}</td>
+      <td>{{prod.status}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="text-right">
+  <label for="cur-page-size">최대 상품: </label>
+  <input type="number" id="cur-page-size" #pageSizeInput [value]="pageSize">
+  <button class="btn btn-info btn-sm" type="button" (click)="pageSizeChanged(pageSizeInput.value)">변경</button>
+</div>
+
+<div class="text-right">
   <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt"
-                  [(page)]="curPage" (pageChange)="pageChanged($event)"></ngb-pagination>
+                  [(page)]="pageNo" (pageChange)="pageNoChanged($event)"></ngb-pagination>
 </div>

@@ -1,3 +1,8 @@
-<p>
-  coupon-management works!
-</p>
+<h2>쿠폰 관리</h2>
+<div class="text-right m-3">
+  <button class="btn btn-info btn-sm" routerLink="/coupon-list/coupon" [queryParams]="{action: 'create'}">
+    <i class="fa fa-plus"></i>쿠폰 등록</button>
+</div>
+<router-outlet></router-outlet>
+
+

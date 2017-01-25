@@ -1,7 +1,5 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import { Product } from "../product.model";
-import { ProductService } from "../product.service";
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { FirebaseApp } from 'angularfire2';
 
@@ -9,7 +7,10 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/observable/generate';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/switchMap';
-import { CategoryService } from "../../category/category.service";
+import { Product } from "../../product.model";
+import { Categories } from "../../../category/category.model";
+import { ProductService } from "../../product.service";
+import { CategoryService } from "../../../category/category.service";
 
 @Component({
   selector: 'scm-product-detail',
@@ -19,14 +20,14 @@ import { CategoryService } from "../../category/category.service";
 export class ProductDetailComponent implements OnInit {
   title;
   product: Product;
+  categories$: Observable<Categories>;
   isCreateMode: boolean;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
               private productService: ProductService,
               private catService: CategoryService,
-              private toastr: ToastsManager,
-  ) {
+              private toastr: ToastsManager) {
   }
 
   ngOnInit() {
@@ -39,10 +40,13 @@ export class ProductDetailComponent implements OnInit {
       console.dir(data.product);
       this.product = data.product;
     });
+
+    this.categories$ = this.catService.categories$
+      .map(cats => cats.filter(c => c.isUse));
   }
 
-  editProduct() {
-    this.productService.modifyProduct(this.product)
+  update() {
+    this.productService.update(this.product)
       .then(() => {
         this.toastr.success('상품 수정 완료', '[상품관리]');
         this.router.navigate(['/product-list']);

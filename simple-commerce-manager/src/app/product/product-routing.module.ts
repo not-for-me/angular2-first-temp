@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductManagementComponent } from "./product-management/product-management.component";
-import { ProductDetailComponent } from "./product-detail/product-detail.component";
-import { ProductDetailResolverService } from "./product-detail/product-detail-resolver.service";
+import { ProductListComponent } from "./product-management/product-list/product-list.component";
+import { ProductDetailComponent } from "./product-management/product-detail/product-detail.component";
+import { ProductListResolverService } from "./product-management/product-list/product-list-resolver.service";
+import { ProductDetailResolverService } from "./product-management/product-detail/product-detail-resolver.service";
 
 
 const routes: Routes = [
   {
-    path: 'product-list', children: [
-    {path: '', pathMatch: 'full', component: ProductManagementComponent},
-    {path: 'product', resolve: {product: ProductDetailResolverService}, component: ProductDetailComponent}
-  ]
+    path: 'product-list',
+    component: ProductManagementComponent,
+    children: [
+      {path: '', pathMatch: 'full', resolve: {listData: ProductListResolverService}, component: ProductListComponent},
+      {path: 'product', resolve: {product: ProductDetailResolverService}, component: ProductDetailComponent}
+    ]
   },
 ];
 

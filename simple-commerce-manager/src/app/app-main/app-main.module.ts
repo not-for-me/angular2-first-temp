@@ -7,6 +7,8 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { MainDashboardComponent } from "./main-dashboard/main-dashboard.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [

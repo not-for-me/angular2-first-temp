@@ -1,11 +1,13 @@
-<h4>카테고리 관리</h4>
-
-<div>
-  <input type="text" #catName/>
-  <button type="button" class="btn btn-warning" (click)="createCategory(catName.value)">카테고리 등록</button>
+<div class="my-2">
+  <button type="button" class="btn btn-outline-primary btn-sm"
+          (click)="isCollapsed = !isCollapsed">카테고리 등록
+  </button>
+</div>
+<div [ngbCollapse]="isCollapsed">
+  <scm-category-detail (submittedCat)="isCollapsed = true"></scm-category-detail>
 </div>
 
-
-<div>
-  <scm-category *ngFor="let cat of categories" [cat]="cat"></scm-category>
+<h4>카테고리 목록</h4>
+<div class="pre-scrollable  p-3 jumbotron cat-list">
+  <scm-cat-list-item *ngFor="let cat of categories$ | async" [cat]="cat"></scm-cat-list-item>
 </div>

@@ -1,0 +1,17 @@
+<div class="card m-2">
+  <div class="card-block p-3">
+    <label class="card-title mr-2 text-muted">No: {{cat.id}}</label>
+    <label class="card-title">카테고리명: {{cat.name}}</label>
+    <span class="badge badge-pill badge-primary">{{cat.isUse}}</span>
+    <p class="card-text">{{cat.desc}}</p>
+    <div class="text-right">
+      <button type="button" class="btn btn-sm btn-warning" (click)="collapaseEditMenu = false">수정</button>
+    <div [ngbCollapse]="collapaseEditMenu">
+      <scm-category-detail [cat]="cat" [editable]="true" (submittedCat)="collapaseEditMenu = true"></scm-category-detail>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+

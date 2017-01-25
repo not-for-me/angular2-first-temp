@@ -20,4 +20,6 @@ export interface Product {
   desc?: string;
   catId?: number;
   couponId?: number;
+  createdDate: string;
+  updateDate: string;
 }
