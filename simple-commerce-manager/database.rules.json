@@ -4,6 +4,12 @@
     ".write": true,
     "products": {
      ".indexOn": ["id"]
+    },
+    "categories": {
+      ".indexOn": ["id"]
+    },
+    "coupons": {
+      ".indexOn": ["id"]
     }
   }
 }

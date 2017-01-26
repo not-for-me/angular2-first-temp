@@ -31,6 +31,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.route.queryParams.subscribe(q => {
       this.isCreateMode = q && q['action'] === 'create';
       this.title = this.isCreateMode ? '신규  상품 등록' : '상품 수정';
@@ -56,4 +57,15 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
+  goPrev() {
+    console.dir(this.route.snapshot);
+
+    const curId = this.product.id;
+    this.productService.getById(curId-1)
+      .subscribe(prevProd => {
+        console.dir(prevProd);
+        this.router.navigate(['product-list','product', {my: '123', dat:'abc'}], {queryParams: {key: prevProd.$key}});
+      });
+    // const prevProdKey = this.route.snapshot.queryParams['key'];
+  }
 }

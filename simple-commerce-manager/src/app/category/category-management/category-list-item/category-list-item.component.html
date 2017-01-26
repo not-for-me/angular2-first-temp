@@ -1,7 +1,7 @@
 <div class="card m-2">
   <div class="card-block p-3">
     <label class="card-title mr-2 text-muted">No: {{cat.id}}</label>
-    <label class="card-title">카테고리명: {{cat.name}}</label>
+    <label class="card-title" [routerLink]="['category', cat.id]">카테고리명: {{cat.name}}</label>
     <span class="badge badge-pill badge-primary">{{cat.isUse}}</span>
     <p class="card-text">{{cat.desc}}</p>
     <div class="text-right">

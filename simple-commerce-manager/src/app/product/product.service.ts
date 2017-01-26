@@ -16,7 +16,7 @@ export class ProductService extends ItemPagingService<Products> {
 
   create(product): Observable<Product> {
     return this.idGenService.update('product')
-      .map((id) => this._products$.push({id: id, status: ProdStatus.WAIT_FOR_SALE}).key)
+      .map((id) => this._products$.push(new Product(id, ProdStatus.WAIT_FOR_SALE)).key)
       .do(k => console.log('after create: ' + k))
       .switchMap($key => this.af.database.object(`/products/${$key}`).take(1));
   }
@@ -25,20 +25,19 @@ export class ProductService extends ItemPagingService<Products> {
     return this.af.database.object(`/products/${key}`).take(1);
   }
 
+  getById(id: number) {
+    return this.af.database.list(`/products`, {query: {orderByChild:'id', equalTo: id}})
+      .take(1)
+      .map(result => result[0]);
+  }
+
   getStream(option) {
     return this.af.database.list('/products', option);
   }
 
   update(product: Product) {
-    const modifiedProd = {
-      name: product.name,
-      listPrice: product.listPrice,
-      status: product.status,
-      // options: product.options,
-      desc: product.desc,
-      catId: product.catId,
-      // couponId: product.couponId
-    };
+    const modifiedProd = Product.getNewForUpdate(product);
+    debugger;
     return this._products$.update(product.$key, modifiedProd);
   }
 

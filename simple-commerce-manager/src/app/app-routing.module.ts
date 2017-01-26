@@ -6,7 +6,9 @@ import { CategoryManagementComponent } from "./category/category-management/cate
 
 const routes: Routes = [
   {path: 'total-summary', component: MainDashboardComponent},
-  {path: 'category-list', component: CategoryManagementComponent},
+  {path: 'product-list', loadChildren: './product/product.module#ProductModule'},
+  {path: 'category-list', loadChildren: './category/category.module#CategoryModule'},
+  {path: 'coupon-list', loadChildren: './coupon/coupon.module#CouponModule'},
   {path: '', redirectTo: '/total-summary', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];

@@ -35,7 +35,6 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   modify(){
-    debugger;
     this.catService.update(this.cat)
       .then(this.onSuccess(), this.onError());
   }

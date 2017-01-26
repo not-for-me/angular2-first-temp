@@ -6,15 +6,18 @@ import { CategoryService } from './category.service';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { FormsModule } from "@angular/forms";
 import { CategoryDetailComponent } from './category-management/category-detail/category-detail.component';
+import { CategoryRoutingModule } from "./category-routing.module";
+import { CategoryListComponent } from './category-management/category-list/category-list.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    CategoryRoutingModule
   ],
   exports: [CategoryManagementComponent],
-  declarations: [CategoryManagementComponent, CategoryListItemComponent, CategoryDetailComponent],
+  declarations: [CategoryManagementComponent, CategoryListItemComponent, CategoryDetailComponent, CategoryListComponent],
   providers: [CategoryService]
 })
 export class CategoryModule { }

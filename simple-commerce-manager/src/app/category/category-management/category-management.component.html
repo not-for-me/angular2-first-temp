@@ -7,7 +7,6 @@
   <scm-category-detail (submittedCat)="isCollapsed = true"></scm-category-detail>
 </div>
 
-<h4>카테고리 목록</h4>
-<div class="pre-scrollable  p-3 jumbotron cat-list">
-  <scm-cat-list-item *ngFor="let cat of categories$ | async" [cat]="cat"></scm-cat-list-item>
-</div>
+<router-outlet></router-outlet>
+
+

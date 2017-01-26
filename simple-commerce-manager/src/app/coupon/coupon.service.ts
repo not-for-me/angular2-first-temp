@@ -29,7 +29,7 @@ export class CouponService extends ItemPagingService<Coupons> {
   }
 
   update(coupon: Coupon) {
-    const modifiedCoupon = Coupon.getNewForUpdate(coupon);
+    const modifiedCoupon = coupon.getNewForUpdate();
     return this._coupons$.update(coupon.$key, modifiedCoupon);
   }
 

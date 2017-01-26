@@ -9,7 +9,7 @@ import { ProductDetailResolverService } from "./product-management/product-detai
 
 const routes: Routes = [
   {
-    path: 'product-list',
+    path: '',
     component: ProductManagementComponent,
     children: [
       {path: '', pathMatch: 'full', resolve: {listData: ProductListResolverService}, component: ProductListComponent},
