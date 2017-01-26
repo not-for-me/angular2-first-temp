@@ -46,6 +46,10 @@ export class ProductDetailComponent implements OnInit {
       .map(cats => cats.filter(c => c.isUse));
   }
 
+  onSubmit() {
+    this.update();
+  }
+
   update() {
     this.productService.update(this.product)
       .then(() => {
