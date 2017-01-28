@@ -1,60 +1,49 @@
 <h2 class="pl-4 my-3">{{title}}</h2>
-<form (ngSubmit)="onSubmit()" (ngReset)="onReset()" #prodForm="ngForm" novalidate>
+<form (ngSubmit)="onSubmit()" [formGroup]="prodForm" novalidate>
 
   <h4 class="pl-5 mt-5">상품 정보</h4>
-  <section class="mx-5 mb-5 p-3 rounded">
+  <fieldset class="mx-5 mb-5 p-3 rounded">
     <div class="input-group pl-5 my-3">
       <span class="input-group-addon" id="product-name">상품명</span>
-      <input type="text" name="prod-name" class="form-control col-4"
-             [(ngModel)]="product.name" required/>
+      <input type="text" formControlName="name" class="form-control col-4"/>
     </div>
 
     <div class="input-group pl-5 my-3">
       <span class="input-group-addon" id="product-listPrice">상품가격</span>
-      <input type="number" name="prod-price" class="form-control col-4"
-             [(ngModel)]="product.listPrice" required min="1000" max="1000000" pattern="[1-9]\d*"/>
+      <input type="number" formControlName="listPrice" class="form-control col-4"/>
     </div>
 
     <div class="input-group pl-5 my-3">
-      <span class="input-group-addon" id="prodcut-qty">상품수량</span>
-      <input type="number" name="prod-qty" class="form-control col-4"
-             [(ngModel)]="product.qty" required min="1" max="100" pattern="[1-9]\d*"/>
+      <span class="input-group-addon" id="product-qty">상품수량</span>
+      <input type="number" formControlName="qty" class="form-control col-4"/>
     </div>
     <div class="input-group pl-5 my-3">
-    <textarea class="form-control col-6" name="prod-desc" rows="4" placeholder="상품 상세 설명"
-              [(ngModel)]="product.desc" required minlength="5" maxlength="100"></textarea>
+    <textarea class="form-control col-6" formControlName="desc"
+              rows="4" placeholder="상품 상세 설명"></textarea>
     </div>
-  </section>
+  </fieldset>
 
   <h4 class="pl-5 mt-5">담당자 정보</h4>
-  <section class="mx-5 mb-5 p-3 rounded">
-    <div class="pl-5 my-3" ngModelGroup="manager">
-      <!--<div class="">-->
-      <!--<button type="button" class="btn btn-info btn-sm mr-1" (click)="addManager()">+</button>-->
-      <!--<button type="button" class="btn btn-warning btn-sm mr-1" (click)="removeManager()">-</button>-->
-      <!--</div>-->
-
-      <!--<div *ngFor="let manager of product.managerInfo; let i = index">-->
-      <!--<app-manager-info [idx]="i" [manager]="manager"></app-manager-info>-->
-      <!--</div>-->
-
-      <label class="mr-1" for="manager-name">이름: </label>
-      <input type="text" id="manager-name" name="manager-name" class="mr-3"
-             [(ngModel)]="product.managerInfo.name" required/>
-      <label class="mr-1" for="manager-phone">연락처: </label>
-      <input type="text" id="manager-phone" name="manager-phone" class=""
-             [(ngModel)]="product.managerInfo.phoneNum" required pattern="010-[0-9]{4}-[0-9]{4}"/>
+  <fieldset class="mx-5 mb-5 p-3 rounded">
+    <div class="pl-2 my-2">
+      <button type="button" class="btn btn-info btn-sm mr-1" (click)="addManager()">+</button>
+      <button type="button" class="btn btn-warning btn-sm mr-1" (click)="removeManager()">-</button>
     </div>
-  </section>
+    <div class="pl-5 my-3" formArrayName="managers">
+      <div *ngFor="let manager of managers.controls; let i = index">
+        <app-manager-info [idx]="i" [manager]="manager"></app-manager-info>
+      </div>
+    </div>
+  </fieldset>
 
   <h4 class="pl-5 mt-5">제출 및 초기화</h4>
-  <section class="mx-5 mb-5 p-3 rounded">
+  <fieldset class="mx-5 mb-5 p-3 rounded">
     <div class="row m-3 p-3">
       <button type="submit" class="btn btn-info mr-2"
-              [disabled]="!prodForm.form.valid">등록
+              [disabled]="!prodForm.valid">등록
       </button>
       <button type="reset" class="btn btn-warning">초기화</button>
     </div>
-  </section>
+  </fieldset>
 
 </form>

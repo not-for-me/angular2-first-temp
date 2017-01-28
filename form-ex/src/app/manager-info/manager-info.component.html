@@ -1,0 +1,6 @@
+<fieldset class="mx-2 my-2 rounded" [formGroup]="manager">
+  <label class="mr-1" [for]="'manager-name-' + idx">이름: </label>
+  <input type="text" [id]="'manager-name-' + idx" formControlName="name" class="mr-3"/>
+  <label class="mr-1" [for]="'manager-phone-' + idx">연락처: </label>
+  <input type="text" [id]="'manager-phone-' + idx" formControlName="phoneNum"/>
+</fieldset>
