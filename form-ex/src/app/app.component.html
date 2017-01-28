@@ -1,5 +1,5 @@
 <h4 class="p-4">{{title}}</h4>
-<form (ngSubmit)="onSubmit()" (ngReset)="onReset()" #prodForm="ngForm" novalidate>
+<form (ngSubmit)="onSubmit()" (ngReset)="onReset()" #prodForm="ngForm" novalidate >
   <div class="input-group pl-5 my-3">
     <span class="input-group-addon" id="product-name">상품명</span>
     <input type="text" name="prod-name" class="form-control col-4"
@@ -20,12 +20,13 @@
 
   <div class="input-group pl-5 my-3">
     <textarea class="form-control col-6" name="prod-desc"
-      rows="4" placeholder="상품 상세 설명" [(ngModel)]="product.desc" required></textarea>
+      rows="4" placeholder="상품 상세 설명" [(ngModel)]="product.desc"
+      required minlength="5" maxlength="100"></textarea>
   </div>
 
-  <!--<ul>
+  <ul>
     <li *ngFor="let err of errors">{{err | json}}</li>
-  </ul>-->
+  </ul>
 <div class="row m-3 p-3">
   <button type="submit" class="btn btn-info btn-sm mr-2"
     [disabled]="!prodForm.form.valid">상품 등록</button>

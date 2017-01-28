@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {MinValueValidator, MaxValueValidator} from './custom-validators';
+import {MinNumValueValidator, MaxNumValueValidator} from './custom-validators';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // MinValueValidator,
-    // MaxValueValidator
+    MinNumValueValidator,
+    MaxNumValueValidator
   ],
   imports: [
     BrowserModule,

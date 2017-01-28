@@ -10,8 +10,8 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent implements AfterViewInit {
   title = '상품 등록';
   product: any;
-  // errorCodes = ['min', 'max', 'required', 'pattern'];
-  // errors: any[] = [];
+  errorCodes = ['min', 'max', 'required', 'pattern'];
+  errors: any[] = [];
   @ViewChild('prodForm') prodForm: NgForm;
 
   constructor() {
@@ -19,21 +19,21 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.prodForm.statusChanges.filter(s => s === 'INVALID')
-    //   .switchMap(() => {
-    //     this.errors = [];
-    //     return Observable.from(Object.keys(this.prodForm.controls));
-    //   })
-    //   .subscribe((controlName) => {
-    //     this.errorCodes
-    //       .filter(code => this.prodForm.hasError(code, [controlName]))
-    //       .forEach(code => {
-    //         const errorMsg = this.prodForm.getError(code, [controlName]);
-    //         this.errors.push({ controlName, code, errorMsg })
-    //       });
-    //   });
+    this.prodForm.statusChanges.filter(s => s === 'INVALID')
+      .switchMap(() => {
+        this.errors = [];
+        return Observable.from(Object.keys(this.prodForm.controls));
+      })
+      .subscribe((controlName) => {
+        this.errorCodes
+          .filter(code => this.prodForm.hasError(code, [controlName]))
+          .forEach(code => {
+            const errorMsg = this.prodForm.getError(code, [controlName]);
+            this.errors.push({ controlName, code, errorMsg })
+          });
+      });
 
-    // this.prodForm.statusChanges.filter(s => s === 'VALID').subscribe(() => this.errors = []);
+    this.prodForm.statusChanges.filter(s => s === 'VALID').subscribe(() => this.errors = []);
   }
 
   initProduct() {
