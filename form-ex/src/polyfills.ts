@@ -22,3 +22,4 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchmap';
+import 'rxjs/add/operator/do';
