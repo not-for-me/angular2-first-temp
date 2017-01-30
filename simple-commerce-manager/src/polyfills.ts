@@ -23,6 +23,7 @@ import 'rxjs/add/observable/generate';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/zip';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/range';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/first';

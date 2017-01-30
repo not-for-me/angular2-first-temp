@@ -5,6 +5,7 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/observable/empty';
 import { ActivatedRoute, Router } from "@angular/router";
 import { PROD_LIST_PAGE_SIZE } from "../../product.tokens";
+import { CheckedProdDataService } from "../checked-prod-data.service";
 
 @Component({
   selector: 'scm-product-list',
@@ -16,12 +17,16 @@ export class ProductListComponent implements OnInit {
   pageSize: number;
   pageNo: number = 1;
   products: Products = [];
+  prodCheckedStatus: boolean[];
+  // checkedProdNos: number[];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private productService: ProductService,
+              private checkedProdIdService: CheckedProdDataService,
               @Inject(PROD_LIST_PAGE_SIZE) pageSize) {
     this.pageSize = pageSize;
+    this.initCheckedProducts();
   }
 
   ngOnInit() {
@@ -33,12 +38,41 @@ export class ProductListComponent implements OnInit {
 
   pageNoChanged(pageNo) {
     this.pageNo = pageNo;
+    this.initCheckedProducts();
     this.getPagedList();
   }
 
   pageSizeChanged(pageSize) {
     this.pageSize = +pageSize;
+    this.initCheckedProducts();
     this.getPagedList();
+  }
+
+  toggleAllItem() {
+    if (this.isCheckedAnyOne()) {
+      this.checkedProdIdService.initProdIds();
+    }
+    else {
+      this.products.map(p => p.id)
+        .forEach(id => this.checkedProdIdService.addProdId(id));
+    }
+
+    this.setAllProductsCheckedStatusTo(!this.isCheckedAnyOne());
+  }
+
+  checkProduct(idx: number, prodId: number) {
+    this.prodCheckedStatus[idx] = !this.prodCheckedStatus[idx];
+
+    if (this.prodCheckedStatus[idx]) {
+      this.checkedProdIdService.addProdId(prodId);
+    }
+    else {
+      this.checkedProdIdService.removeProdId(prodId);
+    }
+  }
+
+  isCheckedAnyOne() {
+    return this.prodCheckedStatus.reduce((acc, cur) => cur || acc, false);
   }
 
   private getPagedList() {
@@ -47,11 +81,14 @@ export class ProductListComponent implements OnInit {
       .subscribe(list => this.products = list);
   }
 
-  checkAllItem() {
+  private initCheckedProducts() {
+    this.checkedProdIdService.initProdIds();
+    this.setAllProductsCheckedStatusTo(false);
   }
 
-  checkItem(id: number) {
-
+  private setAllProductsCheckedStatusTo(v: boolean) {
+    this.prodCheckedStatus = [];
+    Observable.range(0, this.pageSize).subscribe(i => this.prodCheckedStatus[i] = v);
   }
 
 }

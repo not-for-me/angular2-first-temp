@@ -12,20 +12,23 @@ import { ProductService } from './product.service';
 import { FormsModule } from "@angular/forms";
 import { ProductListResolverService } from './product-management/product-list/product-list-resolver.service';
 import { PROD_LIST_PAGE_SIZE } from "./product.tokens";
+import { CouponRegisterModalComponent } from './product-management/coupon-register-modal/coupon-register-modal.component';
+import { CheckedProdDataService } from "./product-management/checked-prod-data.service";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     NgbModule,
-
     ProductRoutingModule
   ],
   exports: [ProductManagementComponent],
-  declarations: [ProductManagementComponent, ProductListComponent, ProductDetailComponent],
+  declarations: [ProductManagementComponent, ProductListComponent, ProductDetailComponent, CouponRegisterModalComponent],
+  entryComponents: [CouponRegisterModalComponent],
   providers: [ProductDetailResolverService,
     ProductListResolverService,
     ProductService,
+    CheckedProdDataService,
     {provide: PROD_LIST_PAGE_SIZE, useValue: 6},
   ]
 })
