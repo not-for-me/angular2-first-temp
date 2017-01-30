@@ -17,11 +17,12 @@ export class CouponService extends ItemPagingService<Coupons> {
   create() {
     return this.idGenService.update('coupon')
       .map((id) => this._coupons$.push(new Coupon(id)).key)
+      .do(k => console.log('after create: ' + k))
       .switchMap($key => this.af.database.object(`/coupons/${$key}`).take(1));
   }
 
   get(key: string) {
-    return this.af.database.object(`/coupons/${key}`);
+    return this.af.database.object(`/coupons/${key}`).take(1);
   }
 
   getStream(option) {
@@ -29,7 +30,7 @@ export class CouponService extends ItemPagingService<Coupons> {
   }
 
   update(coupon: Coupon) {
-    const modifiedCoupon = coupon.getNewForUpdate();
+    const modifiedCoupon = Coupon.getNewForUpdate(coupon);
     return this._coupons$.update(coupon.$key, modifiedCoupon);
   }
 

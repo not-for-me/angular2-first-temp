@@ -9,8 +9,9 @@
     <button class="btn btn-warning mr-2" routerLink="/product-list/product" [queryParams]="{action: 'create'}">
       <i class="fa fa-plus"></i> 상품 등록</button>
     <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="상품 고유 번호">
-      <button class="btn btn-warning my-2 my-sm-0" type="button">상품 조회</button>
+      <input class="form-control mr-sm-2" type="text" placeholder="상품 고유 번호" #searchInput>
+      <button class="btn btn-warning my-2 my-sm-0" type="button"
+              (click)="searchProduct(searchInput.value)">상품 조회</button>
     </form>
   </div>
 </nav>

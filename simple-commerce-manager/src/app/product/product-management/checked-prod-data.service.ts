@@ -1,29 +1,28 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CheckedProdDataService {
-  // checkedIds$: EventEmitter<number[]> = new EventEmitter();
-  checkedProductIds: number[];
+  checkedProductKeys: string[] = [];
+  frozen: boolean = false;
 
   constructor() {
   }
 
-  initProdIds() {
-    this.checkedProductIds = [];
-    // this.checkedIds$.next(this.checkedProductIds);
+  initProdKeys() {
+    if (!this.frozen) {
+      this.checkedProductKeys = [];
+    }
+
+    this.frozen = false;
   }
 
-  addProdId(id:number) {
-    this.checkedProductIds.push(id);
-    console.log(`cur checked: ${this.checkedProductIds}`);
-
-    // this.checkedIds$.next(this.checkedProductIds);
+  addProdKey(key: string) {
+    this.checkedProductKeys.push(key);
+    console.log(`cur checked: ${this.checkedProductKeys}`);
   }
 
-  removeProdId(id: number) {
-    this.checkedProductIds.splice(this.checkedProductIds.indexOf(id), 1);
-    console.log(`cur checked: ${this.checkedProductIds}`);
-
-    // this.checkedIds$.next(this.checkedProductIds);
+  removeProdKey(key: string) {
+    this.checkedProductKeys.splice(this.checkedProductKeys.indexOf(key), 1);
+    console.log(`cur checked: ${this.checkedProductKeys}`);
   }
 }

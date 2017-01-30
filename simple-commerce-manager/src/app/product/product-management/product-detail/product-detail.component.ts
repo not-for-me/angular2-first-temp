@@ -1,12 +1,7 @@
-import { Component, OnInit, Inject, ViewChild, ElementRef, Input } from '@angular/core';
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,  Router } from "@angular/router";
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { FirebaseApp } from 'angularfire2';
-
 import { Observable } from "rxjs/Observable";
-import 'rxjs/add/observable/generate';
-import 'rxjs/add/observable/fromPromise';
-import 'rxjs/add/operator/switchMap';
 import { Product } from "../../product.model";
 import { Categories } from "../../../category/category.model";
 import { ProductService } from "../../product.service";
@@ -31,10 +26,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.route.queryParams.subscribe(q => {
       this.isCreateMode = q && q['action'] === 'create';
-      this.title = this.isCreateMode ? '신규  상품 등록' : '상품 수정';
+      this.title = this.isCreateMode ? '신규 상품 등록' : '상품 수정';
     });
 
     this.route.data.subscribe((data: {product: Product}) => {
@@ -61,15 +55,15 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
-  goPrev() {
-    console.dir(this.route.snapshot);
-
-    const curId = this.product.id;
-    this.productService.getById(curId-1)
-      .subscribe(prevProd => {
-        console.dir(prevProd);
-        this.router.navigate(['product-list','product', {my: '123', dat:'abc'}], {queryParams: {key: prevProd.$key}});
-      });
-    // const prevProdKey = this.route.snapshot.queryParams['key'];
-  }
+  // goPrev() {
+  //   console.dir(this.route.snapshot);
+  //
+  //   const curId = this.product.id;
+  //   this.productService.getById(curId-1)
+  //     .subscribe(prevProd => {
+  //       console.dir(prevProd);
+  //       this.router.navigate(['product-list','product', {my: '123', dat:'abc'}], {queryParams: {key: prevProd.$key}});
+  //     });
+  //   const prevProdKey = this.route.snapshot.queryParams['key'];
+  // }
 }

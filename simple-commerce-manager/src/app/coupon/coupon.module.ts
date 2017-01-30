@@ -9,10 +9,12 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CouponRoutingModule } from "./coupon-routing.module";
 import { CouponDetailComponent } from './coupon-management/coupon-detail/coupon-detail.component';
 import { CouponDetailResolverService } from './coupon-management/coupon-detail/coupon-detail-resolver.service';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     NgbModule,
     CouponRoutingModule
   ],

@@ -1,3 +1,90 @@
-<p>
-  coupon-detail works!
-</p>
+<h4>{{title}}</h4>
+<form (ngSubmit)="onSubmit()" #couponForm="ngForm" novalidate>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-6 py-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="coupon-no">쿠폰 ID</span>
+          <input type="text" name="coupon-id" class="form-control" [value]="coupon.id" readonly>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 py-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="coupon-name">쿠폰명</span>
+          <input type="text" name="coupon-name" class="form-control" [(ngModel)]="coupon.name" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 py-3">
+        <div class="input-group">
+          <span class="mr-3" id="coupon-category">쿠폰 타입</span>
+          <select type="number" name="coupon-type" [(ngModel)]="coupon.type">
+            <option value="NOT_SET">선택해 주세요</option>
+            <option value="RATE">할인율</option>
+            <option value="AMOUNT">할인금액</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 py-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="coupon-offset">{{coupon.type === 'RATE' ? '할인율': '할인금액'}}</span>
+          <input type="number" name="coupon-offset" class="form-control" [(ngModel)]="coupon.offset"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 py-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="coupon-startDate">유효기간 시작일</span>
+          <input class="form-control" placeholder="yyyy-mm-dd" name="coupon-startDate"
+                 [(ngModel)]="couponDuration[0]" (ngModelChange)="convertDateToStr('startDate', $event)" ngbDatepicker
+                 [minDate]="minDate" [startDate]="startDate" #startDatePicker="ngbDatepicker">
+          <div class="input-group-addon" (click)="startDatePicker.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 py-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="coupon-endDate">유효기간 종료일</span>
+          <input class="form-control" placeholder="yyyy-mm-dd" name="coupon-endDate"
+                 [(ngModel)]="couponDuration[1]" (ngModelChange)="convertDateToStr('endDate', $event)" ngbDatepicker
+                 [minDate]="minDate" [startDate]="startDate" #endDatePicker="ngbDatepicker">
+          <div class="input-group-addon" (click)="endDatePicker.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 py-3">
+        <div class="input-group" *ngIf="!isCreateMode">
+          <label class="" id="coupon-created">생성일</label> {{coupon.createdTime}}
+          <label class="" id="coupon-updatd">수정일</label> {{coupon.updatedTime}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6 py-3">
+        <button type="submit" class="btn btn-info btn-sm" [disabled]="!couponForm.form.valid">
+          {{isCreateMode ? '신규 등록' : '수정'}}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -2,30 +2,58 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="prodForm" novalidate>
 
   <h4 class="pl-5 mt-5">상품 정보</h4>
-  <fieldset class="mx-5 mb-5 p-3 rounded">
-    <div class="input-group pl-5 my-3">
-      <span class="input-group-addon" id="product-name">상품명</span>
-      <input type="text" formControlName="name" class="form-control col-4"/>
-    </div>
+  <fieldset class="mx-5 mb-5 rounded">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 py-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="product-name">상품명</span>
+            <input type="text" formControlName="name" class="form-control"/>
+          </div>
+        </div>
+        <div class="col-6 py-3" *ngIf="!prodForm.controls['name'].valid">
+          {{ prodForm.controls['name'].errors | json}}
+        </div>
+      </div>
 
-    <div class="input-group pl-5 my-3">
-      <span class="input-group-addon" id="product-listPrice">상품가격</span>
-      <input type="number" formControlName="listPrice" class="form-control col-4"/>
-    </div>
+      <div class="row">
+        <div class="col-6 py-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="product-listPrice">상품가격</span>
+            <input type="number" formControlName="listPrice" class="form-control"/>
+          </div>
+        </div>
+        <div class="col-6 py-3" *ngIf="!prodForm.controls['listPrice'].valid">
+          {{ prodForm.controls['listPrice'].errors | json}}
+        </div>
+      </div>
 
-    <div class="input-group pl-5 my-3">
-      <span class="input-group-addon" id="product-qty">상품수량</span>
-      <input type="number" formControlName="qty" class="form-control col-4"/>
-    </div>
-    <div class="input-group pl-5 my-3">
-    <textarea class="form-control col-6" formControlName="desc"
-              rows="4" placeholder="상품 상세 설명"></textarea>
+      <div class="row">
+        <div class="col-6 py-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="product-qty">상품수량</span>
+            <input type="number" formControlName="qty" class="form-control"/>
+          </div>
+        </div>
+        <div class="col-6 py-3" *ngIf="!prodForm.controls['qty'].valid">
+          {{ prodForm.controls['qty'].errors | json}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 py-3">
+      <div class="input-group">
+        <textarea class="form-control" formControlName="desc" rows="4" placeholder="상품 상세 설명"></textarea>
+      </div>
+        </div>
+      </div>
     </div>
   </fieldset>
 
   <h4 class="pl-5 mt-5">담당자 정보</h4>
   <fieldset class="mx-5 mb-5 p-3 rounded">
     <div class="pl-2 my-2">
+      <span class="mr-2">추가/삭제:</span>
       <button type="button" class="btn btn-info btn-sm mr-1" (click)="addManager()">+</button>
       <button type="button" class="btn btn-warning btn-sm mr-1" (click)="removeManager()">-</button>
     </div>

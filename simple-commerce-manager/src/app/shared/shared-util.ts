@@ -1,6 +1,10 @@
 import * as moment from 'moment';
 
 export class ScmSharedUtil {
+
+  constructor() {
+  }
+
   static getCurrentDate() {
     return moment().format('YYYY-MM-DD');
   }

@@ -10,7 +10,7 @@ export class Coupon extends ScmBaseModel {
   name: string;
   type: CouponType;
   offset: number;
-  prodIds: number[];
+  productKeys: {[key: string]: boolean};
   startDate: string;
   endDate: string;
 
@@ -21,7 +21,6 @@ export class Coupon extends ScmBaseModel {
     this.name = '';
     this.type = 'NOT_SET';
     this.offset = 0;
-    this.prodIds = [];
     this.startDate = '';
     this.endDate = '';
   }
@@ -31,7 +30,7 @@ export class Coupon extends ScmBaseModel {
       name: other.name,
       type: other.type,
       offset: other.offset,
-      prodIds: other.prodIds,
+      productKeys: other.productKeys ? other.productKeys : {},
       startDate: other.startDate,
       endDate: other.endDate,
       isUse: other.isUse,

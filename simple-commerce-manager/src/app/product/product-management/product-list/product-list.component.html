@@ -16,7 +16,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let prod of products; let i = index">
-      <td class="text-center"><input type="checkbox" [(ngModel)]="prodCheckedStatus[i]" (click)="checkProduct(i, prod.id)"></td>
+      <td class="text-center"><input type="checkbox" [(ngModel)]="prodCheckedStatus[i]" (click)="checkProduct(i, prod.$key)"></td>
       <td>{{prod.id}}</td>
       <td><a routerLink="product" [queryParams]="{key: prod.$key}">{{prod.name}}</a></td>
       <td>{{prod.listPrice}}</td>

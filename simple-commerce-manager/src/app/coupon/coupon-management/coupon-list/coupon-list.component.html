@@ -12,9 +12,11 @@
   <tbody>
   <tr *ngFor="let coupon of coupons">
     <td class="text-center">{{coupon.id}}</td>
-    <td class="text-center">{{coupon.name}}</td>
+    <td class="text-center">
+      <a routerLink="coupon" [queryParams]="{key: coupon.$key}">{{coupon.name}}</a>
+    </td>
     <td class="text-center">{{coupon.type}}</td>
-    <td class="text-center">{{coupon.startDate + '~' + coupon.endDate}}</td>
+    <td class="text-center">{{coupon.startDate + ' ~ ' + coupon.endDate}}</td>
     <td class="text-center">{{coupon.isUse}}</td>
   </tr>
   </tbody>

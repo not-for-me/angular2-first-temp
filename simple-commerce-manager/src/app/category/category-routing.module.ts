@@ -8,7 +8,7 @@ import { CategoryDetailComponent } from "./category-management/category-detail/c
 
 const routes: Routes = [
   {
-    path: '', component: CategoryManagementComponent,
+    path: 'category-list', component: CategoryManagementComponent,
     // path: 'category-list', canActivate: [CategoryAuthGuard], canActivateChild:[CategoryAuthGuard], component: CategoryManagementComponent,
     children: [
       {path: 'category/:id', component: CategoryDetailComponent},

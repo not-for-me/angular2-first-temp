@@ -14,7 +14,7 @@ export class CategoryService {
   }
 
   create(name: string, desc: string) {
-    return this.counterService.update('category-list-item')
+    return this.counterService.update('category')
       .map((id) => this.categories$.push(new Category(id, name, desc)).key)
       .switchMap($key => this.af.database.object(`/categories/${$key}`).take(1));
   }
@@ -25,6 +25,6 @@ export class CategoryService {
   }
 
   count() {
-    return this.counterService.get('category-list-item');
+    return this.counterService.get('category');
   }
 }

@@ -3,6 +3,7 @@
   <button class="btn btn-info btn-sm" routerLink="/coupon-list/coupon" [queryParams]="{action: 'create'}">
     <i class="fa fa-plus"></i>쿠폰 등록</button>
 </div>
+<div *ngIf="prodKeys.length > 0">{{prodKeys | json}}</div>
 <router-outlet></router-outlet>
 
 

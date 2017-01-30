@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { Product, ProdStatus, Products } from "../../product.model";
 import { ProductService } from "../../product.service";
 import { Observable } from "rxjs/Observable";
@@ -12,7 +12,7 @@ import { CheckedProdDataService } from "../checked-prod-data.service";
   templateUrl: 'product-list.component.html',
   styleUrls: ['product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   totalItemCnt: number;
   pageSize: number;
   pageNo: number = 1;
@@ -36,6 +36,10 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    this.checkedProdIdService.initProdKeys();
+  }
+
   pageNoChanged(pageNo) {
     this.pageNo = pageNo;
     this.initCheckedProducts();
@@ -50,24 +54,24 @@ export class ProductListComponent implements OnInit {
 
   toggleAllItem() {
     if (this.isCheckedAnyOne()) {
-      this.checkedProdIdService.initProdIds();
+      this.checkedProdIdService.initProdKeys();
     }
     else {
-      this.products.map(p => p.id)
-        .forEach(id => this.checkedProdIdService.addProdId(id));
+      this.products.map(p => p.$key)
+        .forEach(key => this.checkedProdIdService.addProdKey(key));
     }
 
     this.setAllProductsCheckedStatusTo(!this.isCheckedAnyOne());
   }
 
-  checkProduct(idx: number, prodId: number) {
+  checkProduct(idx: number, key: string) {
     this.prodCheckedStatus[idx] = !this.prodCheckedStatus[idx];
 
     if (this.prodCheckedStatus[idx]) {
-      this.checkedProdIdService.addProdId(prodId);
+      this.checkedProdIdService.addProdKey(key);
     }
     else {
-      this.checkedProdIdService.removeProdId(prodId);
+      this.checkedProdIdService.removeProdKey(key);
     }
   }
 
@@ -82,7 +86,7 @@ export class ProductListComponent implements OnInit {
   }
 
   private initCheckedProducts() {
-    this.checkedProdIdService.initProdIds();
+    this.checkedProdIdService.initProdKeys();
     this.setAllProductsCheckedStatusTo(false);
   }
 

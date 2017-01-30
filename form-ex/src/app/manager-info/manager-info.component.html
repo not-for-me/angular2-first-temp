@@ -1,6 +1,18 @@
-<fieldset class="mx-2 my-2 rounded" [formGroup]="manager">
-  <label class="mr-1" [for]="'manager-name-' + idx">이름: </label>
-  <input type="text" [id]="'manager-name-' + idx" formControlName="name" class="mr-3"/>
-  <label class="mr-1" [for]="'manager-phone-' + idx">연락처: </label>
-  <input type="text" [id]="'manager-phone-' + idx" formControlName="phoneNum"/>
+<fieldset class="mx-2 my-2 py-2 rounded" [formGroup]="manager">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="input-group">
+          <span class="input-group-addon" [id]="'manager-name-' + idx">이름</span>
+          <input type="text" formControlName="name" class="form-control"/>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group">
+          <span class="input-group-addon" [id]="'manager-phone-' + idx">연락처</span>
+          <input type="text" formControlName="phoneNum" class="form-control"/>
+        </div>
+      </div>
+    </div>
+  </div>
 </fieldset>

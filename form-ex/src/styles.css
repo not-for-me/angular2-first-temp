@@ -4,9 +4,9 @@ fieldset {
 }
 
 input.ng-valid, textarea.ng-valid {
-  border-bottom: 2px solid dodgerblue;
+  border-bottom: 2px solid lightgreen;
 }
 
 input.ng-invalid:not(form), textarea.ng-invalid:not(form) {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid lightsalmon;
 }

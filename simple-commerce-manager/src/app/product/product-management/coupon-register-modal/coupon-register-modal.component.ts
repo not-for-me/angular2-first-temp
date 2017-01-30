@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CheckedProdDataService } from "../checked-prod-data.service";
+import { ProductService } from "../../product.service";
+import { CouponService } from "../../../coupon/coupon.service";
 
 @Component({
   selector: 'scm-coupon-register-modal',
@@ -9,13 +11,16 @@ import { CheckedProdDataService } from "../checked-prod-data.service";
 })
 export class CouponRegisterModalComponent implements OnInit {
   checkedProdIds: number[];
+  coupons: any[];
 
-  constructor(
-    private prodDataService: CheckedProdDataService,
-    public activeModal: NgbActiveModal) { }
+  constructor(private productService: ProductService,
+              private couponService: CouponService,
+              private prodDataService: CheckedProdDataService,
+              public activeModal: NgbActiveModal) {
+  }
 
   ngOnInit() {
-    this.checkedProdIds = this.prodDataService.checkedProductIds;
+    this.checkedProdIds = this.prodDataService.checkedProductKeys;
   }
 
 }

@@ -17,6 +17,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from './app.component';
 import { firebaseConfig } from "../firebase.config";
 import { IdGenService } from "./shared/id-gen.service";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,12 +34,13 @@ import { IdGenService } from "./shared/id-gen.service";
 
     /* App Modules */
     AppMainModule,
+    SharedModule,
     ProductModule,
     CategoryModule,
     CouponModule,
     AppRoutingModule
   ],
-  providers: [IdGenService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

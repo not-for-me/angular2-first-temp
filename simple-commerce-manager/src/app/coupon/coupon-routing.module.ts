@@ -8,7 +8,7 @@ import { CouponDetailResolverService } from "./coupon-management/coupon-detail/c
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'coupon-list',
     component: CouponManagementComponent,
     children: [
       {path: '', pathMatch: 'full', resolve: {listData: CouponListResolverService}, component: CouponListComponent},

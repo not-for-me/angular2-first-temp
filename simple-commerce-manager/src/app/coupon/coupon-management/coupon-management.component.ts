@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CheckedProdDataService } from "../../product/product-management/checked-prod-data.service";
 
 @Component({
   selector: 'scm-coupon-management',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coupon-management.component.css']
 })
 export class CouponManagementComponent implements OnInit {
+  prodKeys: string[] = [];
 
-  constructor() { }
+  constructor(private cps: CheckedProdDataService) {}
 
   ngOnInit() {
+    this.prodKeys= this.cps.checkedProductKeys;
   }
 
 }
