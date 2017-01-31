@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductService, BulkUpdateResult } from "../../product.service";
+import { ProductService, UpdateResult } from "../../product.service";
 import { CheckedProdDataService } from "../checked-prod-data.service";
 import { Product, ProdStatus } from "../../product.model";
 import { Observable } from 'rxjs/Observable';
@@ -46,7 +46,7 @@ export class ProductBulkUpdaterService {
       .mergeMap(key => this.prodService.get(key))
       .do(modifyProductStatus)
       .mergeMap(prodForSale => this.prodService.update(prodForSale))
-      .reduce((acc, r: BulkUpdateResult) => {
+      .reduce((acc, r: UpdateResult) => {
         if (r[0]) {
           acc.success.push(r[1])
         } else {
@@ -62,8 +62,8 @@ export class ProductBulkUpdaterService {
       .map(result => result.success);
   }
 
-  private handleBulkUpdate$(update$: Observable<BulkUpdateResult>) {
-    return update$.reduce((acc, r: BulkUpdateResult) => {
+  private handleBulkUpdate$(update$: Observable<UpdateResult>) {
+    return update$.reduce((acc, r: UpdateResult) => {
       if (r[0]) {
         acc.success.push(r[1])
       } else {

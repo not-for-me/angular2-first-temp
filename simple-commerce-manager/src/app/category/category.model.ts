@@ -5,7 +5,6 @@ import { ScmSharedUtil } from "../shared/shared-util";
 export declare type Categories = Category[];
 
 export class Category extends ScmBaseModel {
-  $key: string;
   id: number;
   name: string;
   desc: string;

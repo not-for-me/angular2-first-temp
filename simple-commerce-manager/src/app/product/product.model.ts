@@ -10,7 +10,6 @@ export enum ProdStatus {
 export declare type Products = Product[];
 
 export class Product extends ScmBaseModel {
-  $key?: string;
   id: number;
   name: string;
   listPrice: number;

@@ -1,4 +1,5 @@
 export class ScmBaseModel {
+  $key?: string;
   protected isUse: boolean;
   protected createdTime: string;
   protected updatedTime: string;

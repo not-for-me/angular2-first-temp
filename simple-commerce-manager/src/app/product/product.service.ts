@@ -5,7 +5,7 @@ import { Products, Product, ProdStatus } from "./product.model";
 import { IdGenService } from "../shared/id-gen.service";
 import { ItemPagingService } from "../shared/item-paging.service";
 
-export declare type BulkUpdateResult = [boolean, number];
+export declare type UpdateResult = [boolean, number];
 
 @Injectable()
 export class ProductService extends ItemPagingService<Products> {
@@ -45,10 +45,10 @@ export class ProductService extends ItemPagingService<Products> {
   /**
    *
    * @param product
-   * @throws 실패 시 id로 반환환
+   * @throws 실패 시 id로 반환
    * @returns {firebase.Thenable<any>}
    */
-  update(product: Product): firebase.Thenable<BulkUpdateResult> {
+  update(product: Product): firebase.Thenable<UpdateResult> {
     const modifiedProd = Product.getNewForUpdate(product);
     return this._products$.update(product.$key, modifiedProd)
       .then(() => [true, modifiedProd.id])
