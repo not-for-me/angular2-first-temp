@@ -10,6 +10,7 @@ import { CouponRoutingModule } from "./coupon-routing.module";
 import { CouponDetailComponent } from './coupon-management/coupon-detail/coupon-detail.component';
 import { CouponDetailResolverService } from './coupon-management/coupon-detail/coupon-detail-resolver.service';
 import { FormsModule } from "@angular/forms";
+import { CouponRegisterComponent } from './coupon-register/coupon-register.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { FormsModule } from "@angular/forms";
     CouponRoutingModule
   ],
   exports: [CouponManagementComponent],
-  declarations: [CouponManagementComponent, CouponListComponent, CouponDetailComponent],
+  declarations: [CouponManagementComponent, CouponListComponent, CouponDetailComponent, CouponRegisterComponent],
   providers: [
     CouponService,
     CouponListResolverService,

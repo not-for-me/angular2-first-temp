@@ -1,0 +1,7 @@
+<div>
+  <h4>쿠폰 등록</h4>
+  <div *ngIf="coupon">선택된 쿠폰: {{coupon.name}}</div>
+  <button type="button" class="btn btn-sm btn-info" (click)="register()">등록</button>
+</div>
+
+<scm-coupon-list [isRegister]="true" (onSelected)="selectedCoupon($event)"></scm-coupon-list>

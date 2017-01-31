@@ -1,3 +1,5 @@
+<scm-button-group (onclickedBtn)="clickedBtn($event)"></scm-button-group>
+
 <p>전체 상품: {{totalItemCnt}}</p>
 
 <div class="text-center">
@@ -20,7 +22,7 @@
       <td>{{prod.id}}</td>
       <td><a routerLink="product" [queryParams]="{key: prod.$key}">{{prod.name}}</a></td>
       <td>{{prod.listPrice}}</td>
-      <td>{{prod.status}}</td>
+      <td>{{prod.status | productStatus}}</td>
     </tr>
     </tbody>
   </table>

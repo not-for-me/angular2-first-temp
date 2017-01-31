@@ -6,7 +6,6 @@ export enum ProdStatus {
   SOLD_OUT,
   NOT_FOR_SALE
 }
-;
 
 export declare type Products = Product[];
 

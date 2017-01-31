@@ -5,6 +5,7 @@ import { CouponListComponent } from "./coupon-management/coupon-list/coupon-list
 import { CouponListResolverService } from "./coupon-management/coupon-list/coupon-list-resolver.service";
 import { CouponDetailComponent } from "./coupon-management/coupon-detail/coupon-detail.component";
 import { CouponDetailResolverService } from "./coupon-management/coupon-detail/coupon-detail-resolver.service";
+import { CouponRegisterComponent } from "./coupon-register/coupon-register.component";
 
 const routes: Routes = [
   {
@@ -15,10 +16,12 @@ const routes: Routes = [
       {path: 'coupon', resolve: {coupon: CouponDetailResolverService}, component: CouponDetailComponent},
     ]
   },
+  {path: 'coupon-register', resolve: {listData: CouponListResolverService}, component: CouponRegisterComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CouponRoutingModule { }
+export class CouponRoutingModule {
+}

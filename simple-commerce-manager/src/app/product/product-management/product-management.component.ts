@@ -10,23 +10,9 @@ import { Router } from "@angular/router";
   styleUrls: ['./product-management.component.css']
 })
 export class ProductManagementComponent implements OnInit {
-
-  constructor(
-    private cps: CheckedProdDataService,
-    private router: Router,
-    private modalService: NgbModal) {
+  constructor() {
   }
 
   ngOnInit() {
   }
-
-  openCouponRegisterModal() {
-    this.cps.frozen = true;
-    this.router.navigate(['/coupon-list']);
-    // const modalRef = this.modalService.open(CouponRegisterModalComponent);
-    // modalRef.result
-    //   .then(result => console.log(`close: ${result}`))
-    //   .catch(r => console.log(`dismiss: ${r}`));
-  }
-
 }

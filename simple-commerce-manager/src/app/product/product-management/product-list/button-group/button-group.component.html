@@ -1,0 +1,8 @@
+<div class="m-3">
+  <button class="btn btn-success btn-sm" [disabled]="noneKey$ | async"
+          (click)="onClicked('coupon')">쿠폰 등록</button>
+  <button class="btn btn-danger btn-sm" [disabled]="noneKey$ | async"
+  (click)="onClicked('sell')">판매</button>
+  <button class="btn btn-danger btn-sm" [disabled]="noneKey$ | async"
+  (click)="onClicked('stop')">판매중지</button>
+</div>

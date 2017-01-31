@@ -5,6 +5,8 @@ import { Products, Product, ProdStatus } from "./product.model";
 import { IdGenService } from "../shared/id-gen.service";
 import { ItemPagingService } from "../shared/item-paging.service";
 
+export declare type BulkUpdateResult = [boolean, number];
+
 @Injectable()
 export class ProductService extends ItemPagingService<Products> {
   private _products$: FirebaseListObservable<Products>;
@@ -26,19 +28,37 @@ export class ProductService extends ItemPagingService<Products> {
   }
 
   getById(id: number) {
-    return this.af.database.list(`/products`, {query: {orderByChild:'id', equalTo: id}})
+    return this.af.database.list(`/products`, {query: {orderByChild: 'id', equalTo: id}})
       .take(1)
       .map(result => result[0]);
+  }
+
+  getByStatus(status: ProdStatus) {
+    return this.af.database.list(`/products`, {query: {orderByChild: 'status', equalTo: status}})
+      .take(1);
   }
 
   getStream(option) {
     return this.af.database.list('/products', option);
   }
 
-  update(product: Product) {
+  /**
+   *
+   * @param product
+   * @throws 실패 시 id로 반환환
+   * @returns {firebase.Thenable<any>}
+   */
+  update(product: Product): firebase.Thenable<BulkUpdateResult> {
     const modifiedProd = Product.getNewForUpdate(product);
-    debugger;
-    return this._products$.update(product.$key, modifiedProd);
+    return this._products$.update(product.$key, modifiedProd)
+      .then(() => [true, modifiedProd.id])
+      // .then(() => {
+      //   if (modifiedProd.id === 6) {
+      //     throw new Error('abcd');
+      //   }
+      //   return [true, modifiedProd.id];
+      // })
+      .catch((e) => [false, modifiedProd.id]);
   }
 
   count() {

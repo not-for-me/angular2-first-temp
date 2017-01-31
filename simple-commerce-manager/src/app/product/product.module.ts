@@ -13,6 +13,9 @@ import { FormsModule } from "@angular/forms";
 import { ProductListResolverService } from './product-management/product-list/product-list-resolver.service';
 import { PROD_LIST_PAGE_SIZE } from "./product.tokens";
 import { CouponRegisterModalComponent } from './product-management/coupon-register-modal/coupon-register-modal.component';
+import { ButtonGroupComponent } from './product-management/product-list/button-group/button-group.component';
+import { ProductBulkUpdaterService } from "./product-management/product-list/product-bulk-updater.service";
+import { ProductStatusPipe } from './product-status.pipe';
 
 @NgModule({
   imports: [
@@ -22,11 +25,12 @@ import { CouponRegisterModalComponent } from './product-management/coupon-regist
     ProductRoutingModule
   ],
   exports: [ProductManagementComponent],
-  declarations: [ProductManagementComponent, ProductListComponent, ProductDetailComponent, CouponRegisterModalComponent],
+  declarations: [ProductManagementComponent, ProductListComponent, ProductDetailComponent, CouponRegisterModalComponent, ButtonGroupComponent, ProductStatusPipe],
   entryComponents: [CouponRegisterModalComponent],
   providers: [ProductDetailResolverService,
     ProductListResolverService,
     ProductService,
+    ProductBulkUpdaterService,
     {provide: PROD_LIST_PAGE_SIZE, useValue: 6},
   ]
 })

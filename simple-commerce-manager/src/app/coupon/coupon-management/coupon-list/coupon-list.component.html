@@ -1,7 +1,8 @@
-<h4>쿠폰 목록</h4>
+<h4>{{title}}</h4>
 <table class="table table-bordered">
   <thead>
   <tr>
+    <th class="text-center" *ngIf="isRegister">선택</th>
     <th class="text-center">쿠폰 ID</th>
     <th class="text-center">쿠폰명</th>
     <th class="text-center">쿠폰 유형</th>
@@ -11,6 +12,10 @@
   </thead>
   <tbody>
   <tr *ngFor="let coupon of coupons">
+    <td class="text-center" *ngIf="isRegister">
+      <button type="button" class="btn btn-sm btn-outline-warning" (click)="selectCoupon(coupon)">쿠폰 선택
+      </button>
+    </td>
     <td class="text-center">{{coupon.id}}</td>
     <td class="text-center">
       <a routerLink="coupon" [queryParams]="{key: coupon.$key}">{{coupon.name}}</a>

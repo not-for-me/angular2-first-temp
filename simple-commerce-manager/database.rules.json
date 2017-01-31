@@ -3,7 +3,7 @@
     ".read": true,
     ".write": true,
     "products": {
-     ".indexOn": ["id"]
+     ".indexOn": ["id", "status"]
     },
     "categories": {
       ".indexOn": ["id"]

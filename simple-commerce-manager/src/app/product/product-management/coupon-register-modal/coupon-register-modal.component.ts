@@ -10,7 +10,7 @@ import { CouponService } from "../../../coupon/coupon.service";
   styleUrls: ['coupon-register-modal.component.css']
 })
 export class CouponRegisterModalComponent implements OnInit {
-  checkedProdIds: number[];
+  checkedProdIds: string[];
   coupons: any[];
 
   constructor(private productService: ProductService,

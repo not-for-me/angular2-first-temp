@@ -5,19 +5,26 @@ import { HttpModule } from '@angular/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
-import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { ToastModule, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
 import { AppMainModule } from "./app-main/app-main.module";
 import { ProductModule } from "./product/product.module";
 import { CategoryModule } from "./category/category.module";
 import { CouponModule } from "./coupon/coupon.module";
+import { SharedModule } from "./shared/shared.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { firebaseConfig } from "../firebase.config";
-import { IdGenService } from "./shared/id-gen.service";
-import { SharedModule } from "./shared/shared.module";
+
+// TODO 버전업 확인후 상수로 변경
+export function options(): ToastOptions {
+  return {
+    animate: 'flyRight',
+    enableHTML: true
+  };
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +37,7 @@ import { SharedModule } from "./shared/shared.module";
     /* 3rd Modules */
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
-    ToastModule,
+    ToastModule.forRoot(options()),
 
     /* App Modules */
     AppMainModule,
